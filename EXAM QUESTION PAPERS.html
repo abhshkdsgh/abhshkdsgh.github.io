@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-in">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>EXAM QUESTION PAPERS</title>
+    <meta name="author" content="Abhishek Das G H">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      *{
+        font-size:36px}
+      #link{ background-color: white; color:blue;  text-align: center; width: 100%;}
+      body{ background-image: linear-gradient(135deg, #2a2e86, #366d21);}
+      #folderList{bottom: 100px;}
+      #firstYearSubjects, #secondYearSubjects, #thirdYearSubjects{ bottom: 150px}
+      footer{ 
+      background-color: black; color: white;
+      position: fixed;
+      font-size:24px;     
+      text-align: center;    
+      bottom: 1px; 
+      width: 100%;}
+    </style>
+    <script>
+   let f="";
+   let l="";
+    function AnatLink(){
+       f = document.getElementById("folderList");
+        l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1ySt6G7_CX1u1C40FyW2n9BZM-U5KByKj'>Anatomy Professional Exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1hmvSe4j_-KkZo9fF0Q3QN_MVA1iekXC4'>Anatomy Pre-final exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/191C9z82awIsb_soYID7N9DSbii43wnZA'>Anatomy internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+            }
+      }
+    function PhysioLink(){
+      f = document.getElementById("folderList");
+      l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1XVibSc3ylUomULpisaJdsiBF1BlYxuI_'>Physiology professional exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1iD1CSEuasbbv2z0mmqjphoACdZHPjbMv?usp=share_link'>Physiology pre-final exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1bbppODPte_Tv-Ioa-FivLkQCogJq7jDv'>Physiology internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+            }
+      }
+    function BiochemLink(){
+       f = document.getElementById("folderList");
+        l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1XzM-90hKZYBX01CVnCCKcchGyvGLOG9F?usp=share_link'>Biochemistry professional exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1mtfgM3c6m6KeW-ztzj9ePEop6HzWJWOT?usp=share_link'>Biochemistry prefinal exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1FnjnWedxGYkLKe60XM3bW8vUrIPgG2gW '>Biochemistry internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+      }}
+    function PathoLink(){
+        f = document.getElementById("folderList");
+         l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1Tk7U3fKrb2NaTv4vA7K5iL-sHFQMrg9i?usp=share_link'>Pathology professional exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/18-ZzQoPKVzP21FsV9uUQzx4_tZ7aZ2tt?usp=share_link'>Pathology prefinal exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1u8PV7xocwh05B0JR84WQn27XSBS9EI7k '>Pathology internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+      }}
+    function PharmaLink(){
+        f = document.getElementById("folderList");
+         l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/17jgjmWWdaXmHinuMx0HXEdwgm1DD6jO2?usp=share_link'>Pharmacology professional exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1dGX5y5iRO1uXIJXWwwj72zSQ2KPNsmYX?usp=share_link'>Pharmacology prefinal exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1t2fwiF4e0hWcgX1WR_m92MyJX4UGLs7W '>Pharmacology internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+      }}
+    function MicroLink(){
+        f = document.getElementById("folderList");
+         l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1kAloTMHjmnlWhvlZXIiS-W8bNN-lrgOY?usp=share_link'>Microbiology professional exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1YrFSMAUZxQ7ZQx1nLlBdmxHLL9pVGYux?usp=share_link'>Microbiology pre-final exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1rWqDs2pHE56WhZnKDhYIH8dYWPrKz18C '>Microbiology internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+      }}
+    function FMTLink(){
+        f = document.getElementById("folderList");
+         l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1eaULvE3nwWalHPUDH5OS2O3utt7iZMMh?usp=share_link'>FMT professional exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1mox_loiAFv6XhC0LUgYirpvZLaJbpXKn?usp=share_link'>FMT prefinal exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1CDyc5AsLOhF0-XJKPNAdpBYLyub2Ed1B '>FMT internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+      }}
+    function medLink(){
+        f = document.getElementById("folderList");
+         l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1AEztItxwjx0APQUFSDAw5bbPUTO0B-8E?usp=share_link'>Medicine Professional Exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1j1w0MYjL3_bGYsC6pkbYk_X2bunEXS0b?usp=share_link'>Medicine prefinal exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1L26cflYh2TLSYVVcBAx0qadWQsB9epur '>Medicine internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+        }}
+    function surgLink(){
+        f = document.getElementById("folderList");
+         l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1IPazASq9HrVp2HjX1v8GvWr7zARByVXE?usp=share_link'>Surgery professional exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1Dyxj4Ml4eswICyhGvPEaC11MTTsxQcP5?usp=share_link'>Surgery pre-final exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1Fp3Gog1tsZmYn9Dt4S9GBc2byBnGXJgY '>Surgery internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+     }}
+    function cfmLink(){
+        f = document.getElementById("folderList");
+         l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1EPSUO2CQC_dUXMELSReFhjormAlSOB08?usp=share_link'>CFM professional exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1ZkCaeHWgpnantLXzn0vxPRq5W-7VzTj6?usp=share_link'>CFM prefinal exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1aDs5k3gMjpdMY8vKt_KVuXDWARl-29ej '>CFM internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+      }}
+    function obgLink(){
+        f = document.getElementById("folderList");
+         l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1MzJAjGAgB8jHnRnyp0YmsRHB7Oe0vuub?usp=share_link'>OBG professional exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1AU34YgWMXD2co4d-2nvQGXLxATHkd_tD?usp=share_link'>Obg prefinal exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1N_STpYfV4fFouCOhDJnS1VpmFOUCS1zh '>Obg internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+      }}
+    function paedLink(){
+        f = document.getElementById("folderList");
+         l = f.options[f.selectedIndex].text;
+        switch(l){
+          case "Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/1O-NkZc-TxvPjy60UUHIvnI3xRWEBm_zk?usp=share_link'>Peadiatrics professional exams</a>"
+            break;
+          case "Pre-Final Exam":
+            return "<a href='https://drive.google.com/drive/folders/193K3G9bo_iRcQLu_2aFoACXWBp3sxX_o?usp=share_link'>Peadiatrics pre-final exams</a>"
+            break;
+          case "Internal Exam":
+            return "<a href='https://drive.google.com/drive/folders/1YqtOSvni4rmGvT-yuqFws5o75gcFyf2H '>Paediatrics internal exams</a>"
+            break;
+          default:
+            return "Please Select options1"
+            break;
+            }
+      }
+    
+      
+    function firstYearShow(){
+      document.getElementById("labelSubjectSelector").removeAttribute("hidden");
+      document.getElementById("firstYearSubjects").removeAttribute("hidden");
+      document.getElementById("secondYearSubjects").setAttribute("hidden", "hidden");
+      document.getElementById("thirdYearSubjects").setAttribute("hidden", "hidden");
+     }
+    function secondYearShow(){
+      document.getElementById("labelSubjectSelector").removeAttribute("hidden");
+      document.getElementById("secondYearSubjects").removeAttribute("hidden");
+      document.getElementById("firstYearSubjects").setAttribute("hidden", "hidden");
+      document.getElementById("thirdYearSubjects").setAttribute("hidden", "hidden");
+     }
+    function finalYearShow(){
+      document.getElementById("labelSubjectSelector").removeAttribute("hidden");
+      document.getElementById("thirdYearSubjects").removeAttribute("hidden");
+      document.getElementById("firstYearSubjects").setAttribute("hidden", "hidden");
+      document.getElementById("secondYearSubjects").setAttribute("hidden", "hidden");
+     }
+  function yearSelected(){
+        var e = document.getElementById("yearSelector");
+        var y = e.options[e.selectedIndex].text;
+        
+        switch(y){
+          case "First Year":
+            firstYearShow()
+            break;
+          case "Second Year":
+            secondYearShow()
+            break;
+          case "Final Year":
+            finalYearShow()
+            break;
+          default:
+            break;
+            }
+        }
+      
+      function qpFolderShow(){
+        document.getElementById("labelfolderList").removeAttribute("hidden");
+        document.getElementById("folderList").removeAttribute("hidden");
+      }
+      
+      function preShowLink(){
+        let q = document.getElementById("firstYearSubjects").hasAttribute("hidden");
+        let r = document.getElementById("secondYearSubjects").hasAttribute("hidden");
+        let s = document.getElementById("thirdYearSubjects").hasAttribute("hidden");
+        
+        if (q===false && r===true && s===true){
+          showLinkA()
+          
+        }
+        else { 
+                if (r===false && s===true && q===true){
+                  showLinkB()
+                  
+                } 
+                else{ 
+                
+                    if (s===false && q===true && r===true) {
+                        showLinkC()
+                        
+                    }
+                    else{ console.log("Error!")
+                      }
+                  }
+        
+          }
+       
+      }
+      
+      
+      
+      
+      function showLinkA(){
+        var a = document.getElementById("firstYearSubjects");
+        let s1 = a.options[a.selectedIndex].text;
+        
+        switch(s1){
+          case "Anatomy":
+              qpFolderShow()
+              document.getElementById('link').innerHTML= AnatLink()
+              break;
+          case "Physiology":
+              qpFolderShow()
+              document.getElementById('link').innerHTML= PhysioLink()
+              break;
+          case "Biochemistry":
+              qpFolderShow()
+              document.getElementById('link').innerHTML= BiochemLink()
+              break;
+          default:
+              document.getElementById('link').innerHTML= "Please select subject";
+              break;
+          }
+         
+        
+      
+      }
+      function showLinkB(){
+        var b = document.getElementById("secondYearSubjects");
+        let s2 = b.options[b.selectedIndex].text;
+        
+        switch(s2){
+          case "Pathology":
+              document.getElementById('link').innerHTML= PathoLink()
+              break;
+          case "Pharmacology":
+              document.getElementById('link').innerHTML= PharmaLink()
+              break;
+          case "Microbiology":
+              document.getElementById('link').innerHTML= MicroLink()
+              break;
+          case "FMT":
+              document.getElementById('link').innerHTML= FMTLink()
+              break;
+          default:
+              document.getElementById('link').innerHTML= "Please select subject";
+              break;
+        }
+       
+        
+      } 
+      function showLinkC(){
+        var c = document.getElementById("thirdYearSubjects");
+        let s3 = c.options[c.selectedIndex].text;
+        
+        switch(s3){
+          case "Medicine":
+              document.getElementById('link').innerHTML= medLink()
+              break;
+          case "Surgery":
+              document.getElementById('link').innerHTML= surgLink()
+              break;
+          case "CFM":
+              document.getElementById('link').innerHTML= cfmLink()
+              break;
+          case "OBG":
+              document.getElementById('link').innerHTML= obgLink()
+              break;
+          case "Paediatrics":
+              document.getElementById('link').innerHTML= paedLink()
+              break;
+          default:
+              document.getElementById('link').innerHTML= "Please select subject";
+              break;
+        } }
+      
+     </script>
+</head>
+<body style=" color: white; font-family: Tahoma;">
+    <h1 style="text-align: center;">AIIMS MBBS COURSE EXAM QUESTION PAPERS</h1>
+    
+    
+    <table style="width: 100%; background-color: #444444; height: 57px; font-size: 24px" border="0">
+      <tbody>
+        <tr>
+          <td style="text-align: left;font-size: 24px;"><b>Please select the correct options
+              to open the required file collection<br>
+            </b>
+            <div style="text-align: left; font-size: 24px">Steps:</div>
+            <div style="text-align: left; font-size: 24px">1.Select year of the subject.</div>
+            <div style="text-align: left; font-size: 24px">2.Select subject which appears after
+              selecting year.</div>
+            <div style="text-align: left; font-size: 24px">3.Select the type of exam.</div>
+            <div style="text-align: left; font-size: 24px">4.Click on the link which appears on
+              the white field.</div>
+            
+            Link will change only when question paper type is changed. If you are stuck, try changing the dropdown menu and coming back to previously selected option.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   <br/>
+   <div style="text-align: center;">
+      <form style="height: 36px; font-size:36px"> <label for="year">Select Your
+          Year:</label>
+        <select name="year" id="yearSelector" onchange="yearSelected()">
+          <option value="" disabled="disabled" selected="selected"> Select your
+            year</option>
+          <option id="firstYearShow" value="firstYear" > First Year</option>
+          <option value="secondYear">Second Year</option>
+          <option value="finalYear"> Final Year</option>
+        </select>
+        <br>
+        <label id="labelSubjectSelector" hidden="hidden"> Select Subject: </label>
+        <select id="firstYearSubjects" name="Subject" onchange="qpFolderShow()" hidden>
+          <option value="" disabled="disabled" selected="selected">Select your
+            option</option>
+          
+            <option value="Anatomy">
+              Anatomy</option>
+            <option value="Physiology">Physiology</option>
+            <option value="Biochemistry">Biochemistry</option>
+          
+        </select>
+        <select id="secondYearSubjects" name="Subject" onchange="qpFolderShow()" hidden="hidden">
+          <option value="" disabled="disabled" selected="selected">Select your
+            option</option>
+          
+            <option id="Subject" value="Pathology">Pathology</option>
+            <option value="Pharmacology">Pharmacology</option>
+            <option value="Microbiology">Microbiology</option>
+            <option value="FMT">FMT</option>
+         
+        </select>
+        <select id="thirdYearSubjects" name="Subject" onchange="qpFolderShow()" hidden="hidden">
+          <option value="" disabled="disabled" selected="selected">Select your
+            option</option>
+         
+            <option value="GM">Medicine</option>
+            <option value="GS">Surgery</option>
+            <option value="CFM">CFM</option>
+            <option value="OBG">OBG</option>
+            <option value="Paed">Paediatrics</option>
+          
+        </select>
+        <br>
+        <label for="folderList" id="labelfolderList" hidden="hidden"> Select type of question papers: </label>
+        <select id="folderList" onchange="preShowLink()" hidden="hidden">
+          <option value="" disabled="disabled" selected="selected">Select your
+            option</option>
+            
+            <option>Final Exam</option>
+            <option>Pre-Final Exam</option>
+            <option>Internal Exam</option>
+        </select>
+        
+        <p id="link" name="link">Link will appear here</p>
+        <br/>
+      </form>
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+  </body>
+  <footer>
+  © Abhishek Das G H (  Contact : abhishekdasgh2307@gmai.com)
+  </footer>
+</html>
