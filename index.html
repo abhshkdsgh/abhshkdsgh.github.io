@@ -277,6 +277,7 @@
             finalYearShow()
             break;
           default:
+            document.getElementById('link').innerHTML= "Please select Year"
             break;
             }
         }
@@ -390,8 +391,19 @@
               document.getElementById('link').innerHTML= "Please select subject";
               break;
         } }
-      
-     </script>
+      function processComplete(){
+        let z1 = document.getElementById('folderList');
+        z1.selectedIndex ="none" ;
+        let z21 = document.getElementById('firstYearSubjects');
+        z21.selectedIndex ="none";
+        let z22 = document.getElementById('secondYearSubjects');
+        z22.selectedIndex ="none";
+        let z23 = document.getElementById ('thirdYearSubjects');
+        z23.selectedIndex ="none";
+        let z3 = document.getElementById('yearSelector');
+        z3.selectedIndex="none";
+        }
+  </script>
 </head>
 <div id="holder">
 <body style=" color: white; font-family: Tahoma;">
@@ -411,8 +423,6 @@
             <div style="text-align: left; font-size: 24px">3.Select the type of exam.</div>
             <div style="text-align: left; font-size: 24px">4.Click on the link which appears on
               the white field.</div>
-            
-            Link will change only when question paper type is changed. If you are stuck, try changing the dropdown menu and coming back to previously selected option.
           </td>
         </tr>
       </tbody>
@@ -421,8 +431,8 @@
    <div style="text-align: center;">
       <form style="height: 36px; font-size:36px"> <label for="year">Select Your
           Year:</label>
-        <select name="year" id="yearSelector" onchange="yearSelected()">
-          <option value="" disabled="disabled" selected="selected"> Select your
+        <select name="year" id="yearSelector" onchange="yearSelected()" onblur="yearSelected()">
+          <option value="none" disabled="disabled" selected="selected"> Select your
             year</option>
           <option id="firstYearShow" value="firstYear" > First Year</option>
           <option value="secondYear">Second Year</option>
@@ -430,8 +440,8 @@
         </select>
         <br><br>
         <label id="labelSubjectSelector" hidden="hidden"> Select Subject: </label>
-        <select id="firstYearSubjects" name="Subject" onchange="qpFolderShow()" hidden>
-          <option value="" disabled="disabled" selected="selected">Select your
+        <select id="firstYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden>
+          <option value="none" disabled="disabled" selected="selected">Select your
             option</option>
           
             <option value="Anatomy">
@@ -440,8 +450,8 @@
             <option value="Biochemistry">Biochemistry</option>
           
         </select>
-        <select id="secondYearSubjects" name="Subject" onchange="qpFolderShow()" hidden="hidden">
-          <option value="" disabled="disabled" selected="selected">Select your
+        <select id="secondYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden="hidden">
+          <option value="none" disabled="disabled" selected="selected">Select your
             option</option>
           
             <option id="Subject" value="Pathology">Pathology</option>
@@ -450,8 +460,8 @@
             <option value="FMT">FMT</option>
          
         </select>
-        <select id="thirdYearSubjects" name="Subject" onchange="qpFolderShow()" hidden="hidden">
-          <option value="" disabled="disabled" selected="selected">Select your
+        <select id="thirdYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden="hidden">
+          <option value="none" disabled="disabled" selected="selected">Select your
             option</option>
          
             <option value="GM">Medicine</option>
@@ -463,8 +473,8 @@
         </select>
         <br><br>
         <label for="folderList" id="labelfolderList" hidden="hidden"> Select type of question papers: </label>
-        <select id="folderList" onchange="preShowLink()" hidden="hidden">
-          <option value="" disabled="disabled" selected="selected">Select your
+        <select id="folderList" onchange="preShowLink()" hidden="hidden" onblur=processComplete()>
+          <option value="none" disabled="disabled" selected="selected">Select your
             option</option>
             
             <option>Final Exam</option>
@@ -482,4 +492,16 @@
   © Abhishek Das G H (  Contact : abhishekdasgh2307@gmai.com)
   </footer>
 </div>
+<script>
+let z3 = document.getElementById('yearSelector');
+z3.selectedIndex="none";
+let z1 = document.getElementById('folderList');
+z1.selectedIndex ="none" ;
+let z21 = document.getElementById('firstYearSubjects');
+z21.selectedIndex ="none";
+let z22 = document.getElementById('secondYearSubjects');
+z22.selectedIndex ="none";
+let z23 = document.getElementById ('thirdYearSubjects');
+z23.selectedIndex ="none";
+</script>
 </html>
