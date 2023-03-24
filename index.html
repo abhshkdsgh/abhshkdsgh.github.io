@@ -9,20 +9,24 @@
       *{ 
         font-size:36px}
       html,body{
-      height: 100%;
-      background-image: linear-gradient(120deg, #2a2e86, #366d21);
+      display:block,
+      height: 100vh;
+      background-image: linear-gradient(120deg, #2a2e86, #444444, #366d21);
       }
       #link{ background-color: white; color:blue;  text-align: center; width: 100%;}
       #holder {
-      background-image: linear-gradient(120deg, #2a2e86, #366d21);
-      min-height: 100%;
+      background-image: linear-gradient(120deg, #2a2e86, #444444, #366d21);
+      min-height: 100vh;
       position:relative;
       }
-      #body{ background-image: linear-gradient(120deg, #2a2e86, #366d21); padding-bottom: 80px;}
+      body{ background-image: linear-gradient(120deg, #2a2e86, #444444, #366d21); padding-bottom: 80px;}
       footer{ 
+      left: 0; right: 0;
+      display:block;
+      margin-top: 140px;
       height: 80px;
       background-color: black; color: white;
-      position: absolute;
+      position: fixed;
       font-size:24px;     
       text-align: center;    
       bottom: 0; 
@@ -424,7 +428,7 @@
           <option value="secondYear">Second Year</option>
           <option value="finalYear"> Final Year</option>
         </select>
-        <br>
+        <br><br>
         <label id="labelSubjectSelector" hidden="hidden"> Select Subject: </label>
         <select id="firstYearSubjects" name="Subject" onchange="qpFolderShow()" hidden>
           <option value="" disabled="disabled" selected="selected">Select your
@@ -457,7 +461,7 @@
             <option value="Paed">Paediatrics</option>
           
         </select>
-        <br>
+        <br><br>
         <label for="folderList" id="labelfolderList" hidden="hidden"> Select type of question papers: </label>
         <select id="folderList" onchange="preShowLink()" hidden="hidden">
           <option value="" disabled="disabled" selected="selected">Select your
@@ -467,7 +471,7 @@
             <option>Pre-Final Exam</option>
             <option>Internal Exam</option>
         </select>
-        
+        <br>
         <p id="link" name="link">Link will appear here</p>
         <br/>
       </form>
@@ -475,7 +479,7 @@
     <br/><br/><br/><br/><br/><br/>
   </body>
   <footer>
-  © Abhishek Das G H  (Contact : abhishekdasgh2307@gmai.com)
+  © Abhishek Das G H (  Contact : abhishekdasgh2307@gmai.com)
   </footer>
 </div>
 </html>
