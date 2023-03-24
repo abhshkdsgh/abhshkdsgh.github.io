@@ -6,18 +6,26 @@
     <meta name="author" content="Abhishek Das G H">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-      *{
+      *{ 
         font-size:36px}
+      html,body{
+      height: 100%;
+      background-image: linear-gradient(120deg, #2a2e86, #366d21);
+      }
       #link{ background-color: white; color:blue;  text-align: center; width: 100%;}
-      body{ background-image: linear-gradient(135deg, #2a2e86, #366d21);}
-      #folderList{bottom: 100px;}
-      #firstYearSubjects, #secondYearSubjects, #thirdYearSubjects{ bottom: 150px}
+      #holder {
+      background-image: linear-gradient(120deg, #2a2e86, #366d21);
+      min-height: 100%;
+      position:relative;
+      }
+      #body{ background-image: linear-gradient(120deg, #2a2e86, #366d21); padding-bottom: 80px;}
       footer{ 
+      height: 80px;
       background-color: black; color: white;
-      position: fixed;
+      position: absolute;
       font-size:24px;     
       text-align: center;    
-      bottom: 1px; 
+      bottom: 0; 
       width: 100%;}
     </style>
     <script>
@@ -381,6 +389,7 @@
       
      </script>
 </head>
+<div id="holder">
 <body style=" color: white; font-family: Tahoma;">
     <h1 style="text-align: center;">AIIMS MBBS COURSE EXAM QUESTION PAPERS</h1>
     
@@ -466,6 +475,7 @@
     <br/><br/><br/><br/><br/><br/>
   </body>
   <footer>
-  © Abhishek Das G H (  Contact : abhishekdasgh2307@gmai.com)
+  © Abhishek Das G H  (Contact : abhishekdasgh2307@gmai.com)
   </footer>
+</div>
 </html>
