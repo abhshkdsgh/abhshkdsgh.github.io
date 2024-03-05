@@ -7,38 +7,38 @@
     <meta name="author" content="Abhishek Das G H">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-      *{clear: both;
-        font-size:36px;}
-      html,body{
-      height: 100vh;
-      background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+      *{
+        clear: both;
+        font-size:24px;
+      }
+      body{
+        height: 100vh;
+        background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
       }
       .container {
-      height: 300px;
-      position: relative;
+        height: 300px;
+        position: relative;
       }
       .center {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
       }
-      #link { float:right; background-color: white; color:blue;  text-align: center; width: 100%; left: 0 ; right: 0 ;}
-      #holder {
-      font-size: 24px;
-      min-height: 100vh;
-      }
-      footer{ float:left;
-      left: 0; right: 0;
-      display:block;
-      background-color: black; color: white;
-      font-size:24px;     
-      text-align: center;    
-      bottom: 0; 
-      width: 100%;}
-       select{
+      #link { float:right; font-size: 36px!important; background-color: white; color:blue;  text-align: center; width: 100%; left: 0 ; right: 0 ;}
+      a { font-size: inherit;}
+      footer{ 
+        float:left;
+        left: 0; right: 0;
+        display:block;
+        background-color: black; color: white;
+        font-size:24px;     
+        text-align: center;    
+        bottom: 0; 
+        width: 100%;}
+      select{
         width: 80vw;
         background-image:linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% ) ;
         padding: 8px 20px;
@@ -50,104 +50,72 @@
       }
     </style>
 </head>
-<div id="holder">
 <body style=" color: black; font-family: Tahoma;">
-    <div class="container">
-    <div class="center">
-    <img src="favicon.png" id="favicon" alt="AIIMS MBBS EXAM QUESTION PAPERS" height="300" width="300">    
-    </div>
-    </div>
-    <hr>
-    <table style="width: 100%; background-color: #dddddd; height: 57px; font-size: 24px" border="0">
-      <tbody>
-        <tr>
-          <td style="text-align: left;font-size: 24px;"><b>Please select the correct options
-              to open the required file collection<br>
-            </b>
-            <div style="text-align: left; font-size: 24px">Steps:</div>
-            <div style="text-align: left; font-size: 24px">1.Select year of the subject.</div>
-            <div style="text-align: left; font-size: 24px">2.Select subject which appears after
-              selecting year.</div>
-            <div style="text-align: left; font-size: 24px">3.Select the type of exam.</div>
-            <div style="text-align: left; font-size: 24px">4.Click on the link which appears on
-              the white field.</div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-   <hr>
-   <div style="text-align: center;">
-      <form style="height: 36px; font-size:36px"> <label for="yearSelector">Select Your
-          Year:</label>
-        <select name="year" id="yearSelector" onchange="yearSelected()" onblur="yearSelected()">
-          <option value="none" disabled="disabled" selected="selected"> Select your
-            year</option>
-          <option id="firstYearShow" value="firstYear" > First Year</option>
-          <option value="secondYear">Second Year</option>
-          <option value="finalYear"> Final Year</option>
-        </select>
-        <br><br>
-        <label id="labelSubjectSelector" hidden="hidden"> Select Subject: </label>
-        <select id="firstYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden>
-          <option value="none" disabled="disabled" selected="selected">Select your
-            option</option>
-          
-            <option value="Anatomy">
-              Anatomy</option>
-            <option value="Physiology">Physiology</option>
-            <option value="Biochemistry">Biochemistry</option>
-          
-        </select>
-        <select id="secondYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden="hidden">
-          <option value="none" disabled="disabled" selected="selected">Select your
-            option</option>
-          
-            <option id="Subject" value="Pathology">Pathology</option>
-            <option value="Pharmacology">Pharmacology</option>
-            <option value="Microbiology">Microbiology</option>
-            <option value="FMT">FMT</option>
-         
-        </select>
-        <select id="thirdYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden="hidden">
-          <option value="none" disabled="disabled" selected="selected">Select your
-            option</option>
-         
-            <option value="GM">Medicine</option>
-            <option value="GS">Surgery</option>
-            <option value="CFM">CFM</option>
-            <option value="OBG">OBG</option>
-            <option value="Paed">Paediatrics</option>
-          
-        </select>
-        <br><br>
-        <label for="folderList" id="labelfolderList" hidden="hidden"> Select type of question papers: </label>
-        <select id="folderList" onchange="preShowLink()" hidden="hidden" onblur=processComplete()>
-          <option value="none" disabled="disabled" selected="selected">Select your
-            option</option>
-            
-            <option>Final Exam</option>
-            <option>Pre-Final Exam</option>
-            <option>Internal Exam</option>
-        </select>
-        <hr>
-        
-        <p id="link" name="link">Link will appear here</p>
-        
-        <hr>
-      </form>
-    </div>
-  <p style="font-size: 24px"> To add new question Papers to this collection:<br> Please send the question papers to <a style="font-size: 24px; color: blue" href="mailto:abhishekdasgh2307@gmail.com"> abhishekdasgh2307@gmail.com </a> as an E-mail.<br>
-  Please remember the following points:<ul>
-  <li style="font-size: 24px"> We accept question papers of MBBS Course in various AIIMS only. </li>
-  <li style="font-size: 24px"> File format: ".jpg" or ".jpeg" or ".png" or ".pdf".</li>
-  <li style="font-size: 24px"> Letters should be legible </li>
-  </ul>
-  </p>
-  </body>
+  <div style="height: 100vh;">
+      <div class="container">
+      <div class="center">
+      <img src="favicon.png" id="favicon" alt="AIIMS MBBS EXAM QUESTION PAPERS" height="300" width="300">    
+      </div>
+      </div>
+      <hr>
+    <div style="text-align: center;">
+        <form style="height: 36px; font-size:36px"> <label for="yearSelector">Select Your
+            Year:</label>
+          <select name="year" id="yearSelector" onchange="yearSelected()" onblur="yearSelected()">
+            <option value="none" disabled="disabled" selected="selected"> Select your
+              year</option>
+            <option id="firstYearShow" value="firstYear" > First Year</option>
+            <option value="secondYear">Second Year</option>
+            <option value="finalYear"> Final Year</option>
+          </select>
+          <br><br>
+          <label id="labelSubjectSelector" hidden="hidden"> Select Subject: </label>
+          <select id="firstYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden>
+            <option value="none" disabled="disabled" selected="selected">Select your
+              option</option>
+              <option value="Anatomy">
+                Anatomy</option>
+              <option value="Physiology">Physiology</option>
+              <option value="Biochemistry">Biochemistry</option>  
+          </select>
+          <select id="secondYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden="hidden">
+            <option value="none" disabled="disabled" selected="selected">Select your
+              option</option>
+              <option id="Subject" value="Pathology">Pathology</option>
+              <option value="Pharmacology">Pharmacology</option>
+              <option value="Microbiology">Microbiology</option>
+              <option value="FMT">FMT</option>
+          </select>
+          <select id="thirdYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden="hidden">
+            <option value="none" disabled="disabled" selected="selected">Select your
+              option</option>
+              <option value="GM">Medicine</option>
+              <option value="GS">Surgery</option>
+              <option value="CFM">CFM</option>
+              <option value="OBG">OBG</option>
+              <option value="Paed">Paediatrics</option>
+          </select>
+          <br><br>
+          <label for="folderList" id="labelfolderList" hidden="hidden"> Select type of question papers: </label>
+          <select id="folderList" onchange="preShowLink()" hidden="hidden" onblur=processComplete()>
+            <option value="none" disabled="disabled" selected="selected">Select your
+              option</option>
+              <option>Final Exam</option>
+              <option>Pre-Final Exam</option>
+              <option>Internal Exam</option>
+          </select>
+          <hr>
+          <p id="link" name="link">Link will appear here</p>
+          <hr>
+        </form>
+      </div>
+    <p style="font-size: 24px; text-align: center;"> To add new question Papers to this collection:<br> Please send the question papers to <a style="font-size: 24px; color: blue" href="mailto:abhishekdasgh2307@gmail.com"> abhishekdasgh2307@gmail.com </a> as an E-mail.<br>
+    </p>
+  </div>
   <footer>
-  © Abhishek Das G H
+    © Abhishek Das G H
   </footer>
-</div>
+</body>
 <script>
 let z3 = document.getElementById('yearSelector');
 z3.selectedIndex="none";
