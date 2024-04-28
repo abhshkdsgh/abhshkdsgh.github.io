@@ -1,0 +1,323 @@
+*{font-size: inherit;}
+html{
+  font-size:110%;
+  font-family: sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    white 0 30px,
+    #f5f5f5 30px 36px
+  );
+  color: black;
+  font-weight:bold;
+}
+body{
+  display:flex;
+  flex-direction:column;
+  min-height: 100vh;
+  margin:0;
+  padding:0;
+}
+article{
+  flex:1;
+  font-size:110%;
+}
+.indexDiv {
+  background: radial-gradient(#eeeffa, #c0ffee) ;
+  margin: 12vh 2.4vw;
+  border: solid 1px black;
+  border-radius: 30px;
+  padding: 2.5vh 2.5vw;
+}
+.indexDiv div {
+  font-size: 1.4em;
+  margin-bottom: 1.5vh;
+}
+#resultDiv{
+  display: block;
+  color:black;
+  font-weight:bold;
+  width:100%;
+  min-height: 7vh;
+  text-align:center;
+}
+#resultDiv span{
+  display: inline-block;
+  margin-right: 1ch;
+  vertical-align: middle;
+}
+#resultDiv table{
+  margin:0 auto;
+  width:95%;
+  border: solid 1px blue;
+  border-spacing:0;
+}
+#resultDiv table tr td{
+  margin:0 auto;
+  border: solid 1px red;
+}
+div.nonPrintable{
+  text-align: center;
+  padding: 0 0 0 0;
+}
+div.nonPrintable table{
+  margin:0 auto;
+  width:fit-content;
+}
+div.nonPrintable table tr td{
+  text-align: start;
+}
+#printAsCSVTable{
+  margin:0 auto;
+  width: 95%;
+  border: solid 3px red;
+}
+#printAsCSVTable tr td{
+  text-align: center;
+}
+a {
+  font-size:inherit;
+}
+
+hr {
+  border-top: 3px dashed #FAA32B;
+}
+
+#strtagn{ margin-bottom:80px;}
+
+button {
+  background-color: white;
+  padding: 8px 20px;
+  max-width: 96%;
+  border:5px solid black;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  color: black;
+  box-shadow: 0 0.2vh 10px 0 #000000AA;
+}
+
+input[type='number'], input[type="text"]{
+  width: 55%;
+  background-color: transparent;
+  padding: 8px 20px;
+  margin: 1%;
+  border:5px solid black;
+  border-radius: 16px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  color: black;
+}
+
+input[type="range"]{
+  width: 80%;
+  padding: 0px 0px;
+  border:0px solid black;
+  border-radius: 16px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  color: black;
+}
+
+input[type="radio"]{
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+select > option{
+  color: black;
+}
+
+select{
+  width: 80%;
+  background-color: transparent;
+  padding: 8px 20px;
+  margin: 1%;
+  border:5px solid black;
+  border-radius: 16px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  color: black;
+}
+
+h1{
+  background-image: repeating-linear-gradient(
+    45deg,
+    white 0 30px,
+    #f0f0f0 30px 36px
+  );
+  font-size: 2em;
+}
+
+h2{
+  font-size: 1.6em;
+}
+
+.blockLabel{
+  background-color: #F2F2F1;
+  color: red;
+  font-weight: bolder;
+  padding: 0.5%;
+}
+
+.rangeticks {
+  margin: auto;
+  width: 79%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rangeticks span {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 0.25%;
+  background: black;
+  height: 10px;
+  line-height: 40px;
+  margin: 0;
+}
+
+img {height: 20vh; width:80%}
+
+#firstButton{ border: 5px solid blue; color: blue;}
+
+#secondButton{ border: 5px solid red; color: red;}
+
+#thirdButton{ border: 5px solid purple; color: purple;}
+
+#fourthButton{ border: 5px solid navy; color: navy;}
+
+#fifthButton{ border: 5px solid black; color: black;}
+
+#sixthButton{ border: 5px solid #783114; color: #783114;}
+
+.CF{width: 50%;}
+
+#mainTableTd {
+  width: 23%;
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+#mainTable td{
+  background-color:transparent;
+  padding: 8px 20px;
+  border:5px solid black;
+  border-radius: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+header{
+  background-color: transparent;
+  text-align: right;
+  height: min-content;
+  width: 90%;
+  margin: 0 5% 0 5%;
+}
+header button{
+  height: min-content;
+  padding: 0 1%;
+  margin: 0 1%;
+  vertical-align: middle;
+}
+
+@media (prefers-color-scheme: dark) {
+  html{
+    background-image: repeating-linear-gradient(
+      -45deg,
+      black 0 30px,
+      #161616 30px 36px
+    );
+    color: whitesmoke;
+  }
+  .indexDiv {
+    background: radial-gradient(#001333, #333333);
+  }
+  #resultDiv{
+    color:whitesmoke;
+  }
+  #resultDiv table{
+    border: solid 1px lightblue;
+  }
+  #resultDiv table tr td{
+    border: solid 1px #ff8080;
+  }
+  hr {
+    border-top: 3px dashed #ff8080;
+  }
+
+  button {
+    background-color: black;
+    border:5px solid whitesmoke;
+    color: whitesmoke;
+    box-shadow: 0 0.2vh 10px 0 #FFFFFFAA;
+  }
+
+  input[type='number'], input[type="text"]{
+    background-color: transparent;
+    border:5px solid whitesmoke;
+    color: whitesmoke;
+  }
+
+  input[type="range"]{
+    border:0px solid whitesmoke;
+    color: whitesmoke;
+  }
+
+  select > option{
+    background-color: black;
+    color: whitesmoke;
+    font-weight: bold;
+  }
+
+  select{
+    background-color: transparent;
+    border:5px solid whitesmoke;
+    color: whitesmoke;
+  }
+
+  h1{
+    background-image: repeating-linear-gradient(
+      45deg,
+      black 0 30px,
+      #161616 30px 36px
+    );
+  }
+
+
+  .blockLabel{
+    background-color: brown;
+    color: wheat;
+  }
+
+  #firstButton{ border: 5px solid lightblue; color: lightblue;}
+
+  #secondButton{ border: 5px solid #ffbbba; color: #ffbbba;}
+
+  #thirdButton{ border: 5px solid #cbc3e3; color: #cbc3e3;}
+
+  #fourthButton{ border: 5px solid #e1e2e3; color: #e1e1e1;}
+
+  #fifthButton{ border: 5px solid whitesmoke; color: whitesmoke;}
+
+  #sixthButton{ border: 5px solid #c0ffee; color: #c0ffee;}
+
+  #mainTable td{
+    background-color: transparent;
+    border:5px solid whitesmoke;
+    color: whitesmoke;
+  }
+
+  #printAsCSVTable{
+    border: solid 3px rgb(255, 128, 128);
+  }
+
+  a {
+    color: yellow;
+  }
+}

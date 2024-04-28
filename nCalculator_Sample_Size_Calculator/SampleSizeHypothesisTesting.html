@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Pre-test and Post-test Studies</title>
+    <meta name="viewport" content="width=device-width, user-scalable=1">
+    <link rel="stylesheet" href="style_main.css">
+</head>
+
+<body >
+<header id="header"></header>
+<article>
+    <h1>Pre- and Post- Studies</h1>
+    <div style="text-align: center;">Select type of Calculation:<br> Sample Size for Hypothesis testing for
+        <select id="TypeOfCalculation" required="required" width="85%" onchange="typeOfCalculation()">
+            <option value="none" class="noneSelected" disabled="disabled" selected="selected">Please select</option>
+            <option> Paired Mean</option>
+            <option> Paired Proportion</option>
+        </select>
+    </div>
+    <p id="z1aby2p" hidden> Alpha Error =
+        <select id="z1aby2" class="CF">
+            <option>80%</option>
+            <option>85%</option>
+            <option>90%</option>
+            <option selected="selected">95%</option>
+            <option>99%</option>
+            <option>99.5%</option>
+            <option>99.9%</option>
+        </select>
+    </p>
+    <p id="z1-bp" hidden> Power =
+        <select id="z1-b" class="CF">
+            <option selected="selected">80%</option>
+            <option>90%</option>
+            <option>95%</option>
+            <option>99%</option>
+        </select>
+    </p>
+    <p id="μ1p">μ<sub>1</sub> = <input id="μ1" placeholder="Pre-test mean" type="number" step="any"></p>
+    <p id="μ2p">μ<sub>2</sub> = <input id="μ2" placeholder="Post-test mean" type="number" step="any"></p>
+    <p id="σ1p">σ<sub>1</sub> = <input id="σ1" placeholder="SD in the pre-test" type="number" step="any"></p>
+    <p id="σ2p">σ<sub>2</sub> = <input id="σ2" placeholder="SD in the post-test" type="number" step="any"></p>
+
+    <p id="Sp">s = <input id="S" placeholder="Please enter value" required="required" type="number" step="any"> </p>
+    <p id="Tp">t = <input id="T" placeholder="Please enter value" required="required" type="number" step="any"></p>
+    <p id="Npairsp">n<sub>pairs </sub> = <input id="Npairs" placeholder="Total pairs" required="required" type="number" step="any"> </p>
+
+    <button id="Calculate" onfocus="calculate()">Calculate</button>
+    <br><br>
+    <div id= "resultDiv"><span>Result:</span>
+        <span id="result"> Result will appear here once you enter parameters. </span>
+    </div>
+    <br>
+    <details hidden id="variableshower">
+        <summary>&nbsp;&nbsp;Know what the parameters stand for</summary>
+        <div id="variables">
+            <p hidden id="PairedMeanVariables">
+                <br> μ<sub>1</sub> = Pre-test mean
+                <br> μ<sub>2</sub> = Post-test mean
+                <br> σ<sub>1</sub> = Standard deviation in the Pre-test
+                <br> σ<sub>2</sub> = Standard deviation in the Post-test
+                <br> Δ = Effect size
+                <br> α = Significance level
+                <br> 1-β = Power
+                <br> <img src="pairedMean.png">
+            </p>
+            <p hidden id="PairedProportionVariables">
+                <br> s = Number of cases exposed and control not exposed
+                <br> t = Number of cases not exposed and control exposed
+                <br> n<sub>pairs</sub>= Total pairs
+                <br> α = Significance level
+                <br> 1-β = Power
+                <br> <img src="pairedProportion.png">
+            </p>
+        </div>
+    </details><br>
+    <button onfocus="startAgain()" id="strtagn">Start Again</button>
+</article>
+</body>
+<script src="header.js"></script>
+<script src="SampleSizeHypothesisTesting.js"></script>
+</html>
