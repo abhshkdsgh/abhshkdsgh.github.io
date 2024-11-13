@@ -5,6 +5,10 @@
     <title>EXAM QUESTION PAPERS</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="author" content="Abhishek Das G H">
+    <meta property="og:image" content="favicon.ico" />
+    <meta property="og:image:width" content="320" />
+    <meta property="og:image:height" content="320" />
+    <meta name="description" content="Question paper collection of MBBS course"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       *{
@@ -48,17 +52,36 @@
         transition: all 0.2s ease-in-out;
         color: black;
       }
+      button{
+        background-color: white;
+        padding: 8px 20px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        max-width: 96%;
+        cursor: pointer;
+        font-size: x-large;
+        border:5px solid black;
+        border-radius: 12px;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+        color: black;
+        box-shadow: 0 0.2vh 10px 0 #000000AA;
+      }
+
+      button:hover {
+          filter: brightness(1.2);
+      }
     </style>
 </head>
 <body style=" color: black; font-family: Tahoma;">
   <div style="height: 100vh;">
       <div class="container">
       <div class="center">
-      <img src="favicon.png" id="favicon" alt="AIIMS MBBS EXAM QUESTION PAPERS" height="300" width="300">    
+      <img src="favicon.png" id="favicon" alt="AIIMS MBBS EXAM QUESTION PAPERS LOGO" height="300" width="300">    
       </div>
       </div>
       <hr>
-    <div style="text-align: center;">
+    <div style="text-align: center; display: inline-block;">
         <form style="height: 36px; font-size:36px"> <label for="yearSelector">Select Your
             Year:</label>
           <select name="year" id="yearSelector" onchange="yearSelected()" onblur="yearSelected()">
@@ -105,11 +128,21 @@
               <option>Internal Exam</option>
           </select>
           <hr>
-          <p id="link" name="link">Link will appear here</p>
+          <p id="link" name="link" style="display: none;">Link will appear here</p>
+          <div><button id="linkButton" type="button" style="visibility: hidden;" ontouch="buttonClick()" onclick="buttonClick()">Go to collection!</button></div>
           <hr>
         </form>
       </div>
-    <p style="font-size: 24px; text-align: center;"> To add new question Papers to this collection:<br> Please send the question papers to <a style="font-size: 24px; color: blue" href="mailto:abhishekdasgh2307@gmail.com"> abhishekdasgh2307@gmail.com </a> as an E-mail.<br>
+    <p style="font-size: 24px;"> To add new question Papers to this collection, you can either:
+      <ul>
+        <li>
+          Use this link: <a href="https://e.pcloud.com/#page=puplink&code=nUF7ZmVRQ1RwkLIHGdAfr6F3mdQlhA1ny" target="_blank">CLICK HERE!</a>
+        </li>
+        or
+        <li>
+          Send the question papers to <a style="font-size: 24px; color: blue" href="mailto:abhshkdsgh@proton.me" target="_blank"> abhshkdsgh@proton.me </a> as an E-mail.<br>
+        </li>
+      </ul>
     </p>
   </div>
   <footer>
@@ -358,145 +391,150 @@ z23.selectedIndex ="none";
       document.getElementById("secondYearSubjects").setAttribute("hidden", "hidden");
      }
   function yearSelected(){
-        var e = document.getElementById("yearSelector");
-        var y = e.options[e.selectedIndex].text;
-        
-        switch(y){
-          case "First Year":
-            firstYearShow()
-            break;
-          case "Second Year":
-            secondYearShow()
-            break;
-          case "Final Year":
-            finalYearShow()
-            break;
-          default:
-            document.getElementById('link').innerHTML= "Please select Year"
-            break;
-            }
-        }
-      
-      function qpFolderShow(){
-        document.getElementById("labelfolderList").removeAttribute("hidden");
-        document.getElementById("folderList").removeAttribute("hidden");
+    var e = document.getElementById("yearSelector");
+    var y = e.options[e.selectedIndex].text;
+    
+    switch(y){
+      case "First Year":
+        firstYearShow()
+        break;
+      case "Second Year":
+        secondYearShow()
+        break;
+      case "Final Year":
+        finalYearShow()
+        break;
+      default:
+        document.getElementById('link').innerHTML= "Please select Year"
+        break;
       }
+    }
+  
+  function qpFolderShow(){
+    document.getElementById("labelfolderList").removeAttribute("hidden");
+    document.getElementById("folderList").removeAttribute("hidden");
+  }
+  
+  function preShowLink(){
+    let q = document.getElementById("firstYearSubjects").hasAttribute("hidden");
+    let r = document.getElementById("secondYearSubjects").hasAttribute("hidden");
+    let s = document.getElementById("thirdYearSubjects").hasAttribute("hidden");
+    
+    if (q===false && r===true && s===true){
+      showLinkA()
       
-      function preShowLink(){
-        let q = document.getElementById("firstYearSubjects").hasAttribute("hidden");
-        let r = document.getElementById("secondYearSubjects").hasAttribute("hidden");
-        let s = document.getElementById("thirdYearSubjects").hasAttribute("hidden");
-        
-        if (q===false && r===true && s===true){
-          showLinkA()
-          
-        }
-        else { 
-                if (r===false && s===true && q===true){
-                  showLinkB()
-                  
-                } 
-                else{ 
-                
-                    if (s===false && q===true && r===true) {
-                        showLinkC()
-                        
-                    }
-                    else{ console.log("Error!")
-                      }
+    }
+    else { 
+            if (r===false && s===true && q===true){
+              showLinkB()
+              
+            } 
+            else{ 
+            
+                if (s===false && q===true && r===true) {
+                    showLinkC()
+                    
+                }
+                else{ console.log("Error!")
                   }
-        
-          }
-       
+              }
+    
+      }
+      document.getElementById("linkButton").innerText = document.getElementById("link").innerText;
+      document.getElementById("linkButton").style.visibility = "visible";
+  }
+  
+  
+  
+  
+  function showLinkA(){
+    var a = document.getElementById("firstYearSubjects");
+    let s1 = a.options[a.selectedIndex].text;
+    
+    switch(s1){
+      case "Anatomy":
+          qpFolderShow()
+          document.getElementById('link').innerHTML= AnatLink()
+          break;
+      case "Physiology":
+          qpFolderShow()
+          document.getElementById('link').innerHTML= PhysioLink()
+          break;
+      case "Biochemistry":
+          qpFolderShow()
+          document.getElementById('link').innerHTML= BiochemLink()
+          break;
+      default:
+          document.getElementById('link').innerHTML= "Please select subject";
+          break;
       }
       
-      
-      
-      
-      function showLinkA(){
-        var a = document.getElementById("firstYearSubjects");
-        let s1 = a.options[a.selectedIndex].text;
-        
-        switch(s1){
-          case "Anatomy":
-              qpFolderShow()
-              document.getElementById('link').innerHTML= AnatLink()
-              break;
-          case "Physiology":
-              qpFolderShow()
-              document.getElementById('link').innerHTML= PhysioLink()
-              break;
-          case "Biochemistry":
-              qpFolderShow()
-              document.getElementById('link').innerHTML= BiochemLink()
-              break;
-          default:
-              document.getElementById('link').innerHTML= "Please select subject";
-              break;
-          }
-         
-        
-      
-      }
-      function showLinkB(){
-        var b = document.getElementById("secondYearSubjects");
-        let s2 = b.options[b.selectedIndex].text;
-        
-        switch(s2){
-          case "Pathology":
-              document.getElementById('link').innerHTML= PathoLink()
-              break;
-          case "Pharmacology":
-              document.getElementById('link').innerHTML= PharmaLink()
-              break;
-          case "Microbiology":
-              document.getElementById('link').innerHTML= MicroLink()
-              break;
-          case "FMT":
-              document.getElementById('link').innerHTML= FMTLink()
-              break;
-          default:
-              document.getElementById('link').innerHTML= "Please select subject";
-              break;
-        }
-       
-        
-      } 
-      function showLinkC(){
-        var c = document.getElementById("thirdYearSubjects");
-        let s3 = c.options[c.selectedIndex].text;
-        
-        switch(s3){
-          case "Medicine":
-              document.getElementById('link').innerHTML= medLink()
-              break;
-          case "Surgery":
-              document.getElementById('link').innerHTML= surgLink()
-              break;
-          case "CFM":
-              document.getElementById('link').innerHTML= cfmLink()
-              break;
-          case "OBG":
-              document.getElementById('link').innerHTML= obgLink()
-              break;
-          case "Paediatrics":
-              document.getElementById('link').innerHTML= paedLink()
-              break;
-          default:
-              document.getElementById('link').innerHTML= "Please select subject";
-              break;
-        } }
-      function processComplete(){
-        let z1 = document.getElementById('folderList');
-        z1.selectedIndex ="none" ;
-        let z21 = document.getElementById('firstYearSubjects');
-        z21.selectedIndex ="none";
-        let z22 = document.getElementById('secondYearSubjects');
-        z22.selectedIndex ="none";
-        let z23 = document.getElementById ('thirdYearSubjects');
-        z23.selectedIndex ="none";
-        let z3 = document.getElementById('yearSelector');
-        z3.selectedIndex="none";
-        }
+    
+  
+  }
+  function showLinkB(){
+    var b = document.getElementById("secondYearSubjects");
+    let s2 = b.options[b.selectedIndex].text;
+    
+    switch(s2){
+      case "Pathology":
+          document.getElementById('link').innerHTML= PathoLink()
+          break;
+      case "Pharmacology":
+          document.getElementById('link').innerHTML= PharmaLink()
+          break;
+      case "Microbiology":
+          document.getElementById('link').innerHTML= MicroLink()
+          break;
+      case "FMT":
+          document.getElementById('link').innerHTML= FMTLink()
+          break;
+      default:
+          document.getElementById('link').innerHTML= "Please select subject";
+          break;
+    }
+    
+    
+  } 
+  function showLinkC(){
+    var c = document.getElementById("thirdYearSubjects");
+    let s3 = c.options[c.selectedIndex].text;
+    
+    switch(s3){
+      case "Medicine":
+          document.getElementById('link').innerHTML= medLink()
+          break;
+      case "Surgery":
+          document.getElementById('link').innerHTML= surgLink()
+          break;
+      case "CFM":
+          document.getElementById('link').innerHTML= cfmLink()
+          break;
+      case "OBG":
+          document.getElementById('link').innerHTML= obgLink()
+          break;
+      case "Paediatrics":
+          document.getElementById('link').innerHTML= paedLink()
+          break;
+      default:
+          document.getElementById('link').innerHTML= "Please select subject";
+          break;
+    }
+  }
+  function processComplete(){
+    let z1 = document.getElementById('folderList');
+    z1.selectedIndex ="none" ;
+    let z21 = document.getElementById('firstYearSubjects');
+    z21.selectedIndex ="none";
+    let z22 = document.getElementById('secondYearSubjects');
+    z22.selectedIndex ="none";
+    let z23 = document.getElementById ('thirdYearSubjects');
+    z23.selectedIndex ="none";
+    let z3 = document.getElementById('yearSelector');
+    z3.selectedIndex="none";
+  }
+  function buttonClick(){
+   document.getElementById("link").firstChild.click();
+  }
   </script>
 </html>
