@@ -14,6 +14,7 @@
       *{
         clear: both;
         font-size:24px;
+        text-align: center;
       }
       body{
         height: 100vh;
@@ -42,7 +43,6 @@
         bottom: 0; 
         width: 100%;}
       select{
-        width: 80vw;
         background-image:linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% ) ;
         padding: 8px 20px;
         border:5px solid black;
@@ -80,19 +80,19 @@
       </div>
       </div>
       <hr>
-    <div style="text-align: center; display: inline-block;">
+    <div style="text-align: center; display: inline-block; width: 96%;">
         <form style="height: 36px; font-size:36px"> <label for="yearSelector">Select Your
-            Year:</label>
-          <select name="year" id="yearSelector" onchange="yearSelected()" onblur="yearSelected()">
+            Year:</label><br>
+          <select name="year" id="yearSelector">
             <option value="none" disabled="disabled" selected="selected"> Select your
               year</option>
-            <option id="firstYearShow" value="firstYear" > First Year</option>
-            <option value="secondYear">Second Year</option>
-            <option value="finalYear"> Final Year</option>
+            <option value="firstYear" > First Year </option>
+            <option value="secondYear"> Second Year </option>
+            <option value="finalYear"> Final Year </option>
           </select>
-          <br><br>
-          <label id="labelSubjectSelector" hidden="hidden"> Select Subject: </label>
-          <select id="firstYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden>
+          <hr>
+          <label id="labelSubjectSelector"> Select Subject: </label><br>
+          <select id="firstYearSubjects" name="Subject" class="subjects0">
             <option value="none" disabled="disabled" selected="selected">Select your
               option</option>
               <option value="Anatomy">
@@ -100,7 +100,7 @@
               <option value="Physiology">Physiology</option>
               <option value="Biochemistry">Biochemistry</option>  
           </select>
-          <select id="secondYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden="hidden">
+          <select id="secondYearSubjects" name="Subject"  class="subjects0">
             <option value="none" disabled="disabled" selected="selected">Select your
               option</option>
               <option id="Subject" value="Pathology">Pathology</option>
@@ -108,7 +108,7 @@
               <option value="Microbiology">Microbiology</option>
               <option value="FMT">FMT</option>
           </select>
-          <select id="thirdYearSubjects" name="Subject" onchange="qpFolderShow()" onblur="qpFolderShow()" hidden="hidden">
+          <select id="thirdYearSubjects" name="Subject" class="subjects0">
             <option value="none" disabled="disabled" selected="selected">Select your
               option</option>
               <option value="GM">Medicine</option>
@@ -117,9 +117,9 @@
               <option value="OBG">OBG</option>
               <option value="Paed">Paediatrics</option>
           </select>
-          <br><br>
-          <label for="folderList" id="labelfolderList" hidden="hidden"> Select type of question papers: </label>
-          <select id="folderList" onchange="preShowLink()" hidden="hidden" onblur=processComplete()>
+          <hr>
+          <label for="folderList" id="labelfolderList"> Select type of question papers: </label><br>
+          <select id="folderList">
             <option value="none" disabled="disabled" selected="selected">Select your
               option</option>
               <option>Final Exam</option>
@@ -128,20 +128,17 @@
           </select>
           <hr>
           <p id="link" name="link" style="display: none;">Link will appear here</p>
-          <div><button id="linkButton" type="button" style="visibility: hidden;" ontouch="buttonClick()" onclick="buttonClick()">Go to collection!</button></div>
+          <div><button id="linkButton" type="button" style="visibility: hidden;" ontouch="buttonClick()" onclick="buttonClick()">CLICK HERE:</button></div>
           <hr>
         </form>
       </div>
     <p style="font-size: 24px;"> To add new question Papers to this collection, you can either:
-      <ul>
-        <li>
+      <br><br>
           Use this link: <a href="https://e.pcloud.com/#page=puplink&code=nUF7ZmVRQ1RwkLIHGdAfr6F3mdQlhA1ny" target="_blank">CLICK HERE!</a>
-        </li>
-        or
-        <li>
-          Send the question papers to <a style="font-size: 24px; color: blue" href="mailto:abhshkdsgh@proton.me" target="_blank"> abhshkdsgh@proton.me </a> as an E-mail.<br>
-        </li>
-      </ul>
+        <br>or<br>
+          E-mail the question papers to <a style="font-size: 24px; color: blue" href="mailto:abhishekdasgh2307@gmail.com" target="_blank"> abhishekdasgh2307@gmail.com </a>
+          <br><br>
+        Your contributions matters! Please contribute to this collection.
     </p>
   </div>
   <script>
@@ -368,27 +365,36 @@
         
           
         function firstYearShow(){
-          document.getElementById("labelSubjectSelector").removeAttribute("hidden");
-          document.getElementById("firstYearSubjects").removeAttribute("hidden");
-          document.getElementById("secondYearSubjects").setAttribute("hidden", "hidden");
-          document.getElementById("thirdYearSubjects").setAttribute("hidden", "hidden");
+          document.getElementById("labelSubjectSelector").style.display = "inline-block";
+          document.getElementById("firstYearSubjects").style.display = "inline-block";
+          document.getElementById("secondYearSubjects").style.display = "none";
+          document.getElementById("thirdYearSubjects").style.display = "none";
          }
         function secondYearShow(){
-          document.getElementById("labelSubjectSelector").removeAttribute("hidden");
-          document.getElementById("secondYearSubjects").removeAttribute("hidden");
-          document.getElementById("firstYearSubjects").setAttribute("hidden", "hidden");
-          document.getElementById("thirdYearSubjects").setAttribute("hidden", "hidden");
+          document.getElementById("labelSubjectSelector").style.display = "inline-block";
+          document.getElementById("secondYearSubjects").style.display = "inline-block";
+          document.getElementById("firstYearSubjects").style.display = "none";
+          document.getElementById("thirdYearSubjects").style.display = "none";
          }
         function finalYearShow(){
-          document.getElementById("labelSubjectSelector").removeAttribute("hidden");
-          document.getElementById("thirdYearSubjects").removeAttribute("hidden");
-          document.getElementById("firstYearSubjects").setAttribute("hidden", "hidden");
-          document.getElementById("secondYearSubjects").setAttribute("hidden", "hidden");
+          document.getElementById("labelSubjectSelector").style.display = "inline-block";
+          document.getElementById("thirdYearSubjects").style.display = "inline-block";
+          document.getElementById("firstYearSubjects").style.display = "none";
+          document.getElementById("secondYearSubjects").style.display = "none";
          }
+
+         function clearSubjectSelector(){
+          document.getElementById("secondYearSubjects").style.display = "none";
+          document.getElementById("thirdYearSubjects").style.display = "none";
+          document.getElementById("firstYearSubjects").style.display = "none";
+          document.getElementById("thirdYearSubjects").style.display = "none";
+          document.getElementById("firstYearSubjects").style.display = "none";
+          document.getElementById("secondYearSubjects").style.display = "none";                                                    
+         }
+
       function yearSelected(){
         var e = document.getElementById("yearSelector");
         var y = e.options[e.selectedIndex].text;
-        
         switch(y){
           case "First Year":
             firstYearShow()
@@ -401,19 +407,43 @@
             break;
           default:
             document.getElementById('link').innerHTML= "Please select Year"
+            clearSubjectSelector()
             break;
           }
+          let z1 = document.getElementById('folderList');
+          z1.selectedIndex ="none" ;
+          let z21 = document.getElementById('firstYearSubjects');
+          z21.selectedIndex ="none";
+          let z22 = document.getElementById('secondYearSubjects');
+          z22.selectedIndex ="none";
+          let z23 = document.getElementById ('thirdYearSubjects');
+          z23.selectedIndex ="none";
         }
+
+        document.getElementById("yearSelector").addEventListener("click", yearSelected);
       
       function qpFolderShow(){
-        document.getElementById("labelfolderList").removeAttribute("hidden");
-        document.getElementById("folderList").removeAttribute("hidden");
+        document.getElementById("labelfolderList").style.display = "inline-block";
+        document.getElementById("folderList").style.display = "inline-block";
+        document.getElementById("folderList").selectedIndex = "none";
       }
+
+      document.querySelectorAll(".subjects0").forEach(element => {
+        element.addEventListener("change", () => {
+          qpFolderShow();
+          document.querySelectorAll(".subjects0").forEach(element1 => {
+            if(!(element1 === element)) {
+              element1.selectedIndex = "none";
+              element1.style.display = "none";
+            }
+          })
+        });
+      });
       
       function preShowLink(){
-        let q = document.getElementById("firstYearSubjects").hasAttribute("hidden");
-        let r = document.getElementById("secondYearSubjects").hasAttribute("hidden");
-        let s = document.getElementById("thirdYearSubjects").hasAttribute("hidden");
+        let q = document.getElementById("firstYearSubjects").style.display === "none";
+        let r = document.getElementById("secondYearSubjects").style.display === "none";
+        let s = document.getElementById("thirdYearSubjects").style.display === "none";
         
         if (q===false && r===true && s===true){
           showLinkA()
@@ -435,11 +465,28 @@
                   }
         
           }
-          document.getElementById("linkButton").innerText = document.getElementById("link").innerText;
+          
+          if(
+            document.getElementById("folderList").selectedIndex !== "none" || 
+              (
+                document.getElementById("firstYearSubjects").selectedIndex !== "none" &&
+                document.getElementById("secondYearSubjects").selectedIndex !== "none" &&
+                document.getElementById("thirdYearSubjects").selectedIndex !== "none"
+              ) ||
+            document.getElementById("yearSelector").selectedIndex !== "none"
+          ) {
+            if(document.getElementById("link").innerText == "Please select subject"){
+              document.getElementById("linkButton").innerText = document.getElementById("link").innerText;
+            } else if(document.getElementById("link").innerText === "Please report this error to e-mail Id mentioned below"){
+              document.getElementById("linkButton").innerText = "Please select type of Exam";
+            } else {
+              document.getElementById("linkButton").innerText = "Click here for " + document.getElementById("link").innerText + " question papers";
+            }
+        }
           document.getElementById("linkButton").style.visibility = "visible";
       }
       
-      
+      document.getElementById("folderList").addEventListener("click", preShowLink);
       
       
       function showLinkA(){
@@ -448,24 +495,18 @@
         
         switch(s1){
           case "Anatomy":
-              qpFolderShow()
               document.getElementById('link').innerHTML= AnatLink()
               break;
           case "Physiology":
-              qpFolderShow()
               document.getElementById('link').innerHTML= PhysioLink()
               break;
           case "Biochemistry":
-              qpFolderShow()
               document.getElementById('link').innerHTML= BiochemLink()
               break;
           default:
               document.getElementById('link').innerHTML= "Please select subject";
               break;
           }
-          
-        
-      
       }
       function showLinkB(){
         var b = document.getElementById("secondYearSubjects");
@@ -519,6 +560,7 @@
       function processComplete(){
         let z1 = document.getElementById('folderList');
         z1.selectedIndex ="none" ;
+        z1.style.display = "none";
         let z21 = document.getElementById('firstYearSubjects');
         z21.selectedIndex ="none";
         let z22 = document.getElementById('secondYearSubjects');
@@ -527,10 +569,21 @@
         z23.selectedIndex ="none";
         let z3 = document.getElementById('yearSelector');
         z3.selectedIndex="none";
+        document.getElementById("secondYearSubjects").style.display = "none";
+        document.getElementById("thirdYearSubjects").style.display = "none";
+        document.getElementById("firstYearSubjects").style.display = "none";
+        document.getElementById("thirdYearSubjects").style.display = "none";
+        document.getElementById("firstYearSubjects").style.display = "none";
+        document.getElementById("secondYearSubjects").style.display = "none";
+        document.getElementById("labelSubjectSelector").style.display = "none";
+        document.getElementById("labelfolderList").style.display = "none";
       }
       function buttonClick(){
        document.getElementById("link").firstChild.click();
+       processComplete();
       }
+
+      processComplete();
       </script>
 </body>
 </html>
