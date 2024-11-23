@@ -420,7 +420,7 @@
           z23.selectedIndex ="none";
         }
 
-        document.getElementById("yearSelector").addEventListener("click", yearSelected);
+        document.getElementById("yearSelector").addEventListener("change", yearSelected);
       
       function qpFolderShow(){
         document.getElementById("labelfolderList").style.display = "inline-block";
@@ -476,7 +476,7 @@
             document.getElementById("yearSelector").selectedIndex !== "none"
           ) {
             if(document.getElementById("link").innerText == "Please select subject"){
-              document.getElementById("linkButton").innerText = document.getElementById("link").innerText;
+              document.getElementById("linkButton").innerText = "Please fill all the fields";
             } else if(document.getElementById("link").innerText === "Please report this error to e-mail Id mentioned below"){
               document.getElementById("linkButton").innerText = "Please select type of Exam";
             } else {
@@ -486,8 +486,7 @@
           document.getElementById("linkButton").style.visibility = "visible";
       }
       
-      document.getElementById("folderList").addEventListener("click", preShowLink);
-      
+      document.getElementById("folderList").addEventListener("change", preShowLink);
       
       function showLinkA(){
         var a = document.getElementById("firstYearSubjects");
