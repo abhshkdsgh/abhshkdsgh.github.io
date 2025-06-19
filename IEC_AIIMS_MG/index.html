@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { 
+        font-family: Arial; padding: 20px;
+        font-size: 1.21rem;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 50px;
+        overflow: hidden;
+        resize: none; 
+        box-sizing: border-box;
+        font-size: 1rem;
+        padding: 0.5em;
+      }
+      input[type= 'text'], input[type= 'number']{
+        width: 100%;
+      }
+      .print-textarea {
+        display: none;
+      }
+      h3{
+        text-align: center;
+      }
+
+      td{
+        text-align: center;
+        vertical-align: top;
+      }
+
+      @media print {
+        textarea, button {
+          display: none;
+        }
+
+        .print-textarea {
+          display: block;
+          white-space: pre-wrap;
+          word-break: break-word;
+          overflow-wrap: break-word;
+          border: 1px solid gray;
+          padding: 0.5em;
+          font-size: 1rem;
+          width: 100%;
+          min-height: 50px;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table><tr>
+      <td>
+        <img src="https://www.aiimsmangalagiri.edu.in/wp-content/uploads/2024/06/AIIMS_MANGALAGIRI_COLOUR-28.10.21.png" style="width: 8vw;">
+      </td>
+      <td style="text-align: center;">
+        <h2>ALL INDIA INSTITUTE OF MEDICAL SCIENCES</h2>
+        <h2>MANGALAGIRI</h2>
+        <h3>Application form for initial review</h3>
+      </td>
+    </tr></table>
+    General Instructions :<br> 
+    (a) Tick one or more as applicable. Mark NA if not applicable<br>
+    (b) Attach additional sheets if required<br>
+    (c) May select more than one option<br>
+    <table id="myForm">
+      <h3>Section A - Basic Information</h3>
+      <h4>1. Administrative details</h4>
+      <label>(a) Name of the organization : <input name="orgName" required type="text"></label><br><br>
+      <label>(b) Name of Ethics Committee : <input name="committeeName" required type="text"></label><br><br>
+      <label>(c) Name of Principal Investigator : <input name="piName" required type="text"></label><br><br>
+      <label>(d) Department/Division : <input name="committeeName" required type="text"></label><br><br>
+      <label>(e) Date of submission : <input type="date" required></label><br><br>
+      <label>(f) Type of review requested :</label><br>
+      <label><input type="radio" name="reviewType" value="excemptionFromReview">Excemption From Review</label><br>
+      <label><input type="radio" name="reviewType" value="expeditedReview">Expedited Review</label><br>
+      <label><input type="radio" name="reviewType" value="fullCommitteeReview"> Full Committee Review</label><br><br>
+      <label>(g) Title of the study : <textarea name="title"></textarea></label><br><br><div class="print-textarea"></div>
+      <label>Acronym/Short title of the study : <input name="shortTitle" type= 'text' required></label><br><br>
+      <label>(h) Protocol number (If any) : <input name="protNum" type= 'text' required></label><br><br>
+      <label>Version number: <input name="version" type= 'text'></label><br><br><br>
+      <label>(i) Details of the investigators</label>
+      <table style="width: 100%;" id="investigatorTable">
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                Designation and Qualification
+            </td>
+            <td>
+                Department and institution
+            </td>
+            <td>
+                Address for Commuication
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4>Principal Investigator/Guide</td>
+        </tr>
+        <tr>
+            <td>
+                <textarea name="person1Name" value="person1Name"></textarea><div class="print-textarea"></div>
+            </td>
+            <td>
+                <textarea name="person1DesgQual" value="person1DesgQual"></textarea><div class="print-textarea"></div>
+            </td>
+            <td>
+                <textarea name="person1DeptInst" value="person1DeptInst"></textarea><div class="print-textarea"></div>
+            </td>
+            <td>
+                <textarea name="person1Address" value="person1Address"></textarea><div class="print-textarea"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4>
+                Co-investigator/student/fellow
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea name="person2Name" value="person2Name"></textarea><div class="print-textarea"></div>
+            </td>
+            <td>
+                <textarea name="person2DesgQual" value="person2DesgQual"></textarea><div class="print-textarea"></div>
+            </td>
+            <td>
+                <textarea name="person2DeptInst" value="person2DeptInst"></textarea><div class="print-textarea"></div>
+            </td>
+            <td>
+                <textarea name="person2Address" value="person2Address"></textarea><div class="print-textarea"></div>
+            </td>
+        </tr>
+      </table>
+      <button type="button" onclick="addInv()">Add investigator</button><br>
+      <label>(j) Number of studies where applicant is a:</label><br>
+      <div style="padding-left: 20px;">
+        <label>(i)Principal Investigator at time of submission<input type="number"></label>	<br>
+        <label>(ii)Co Principal Investigator at time of submission: <input type="number"></label><br>
+      </div>
+      <label>(k)Duration of the study: <input name="studDur" type= 'text'></label><br>
+      <h4><label>2. Funding Details and Budget</label></h4>
+      <label>(a)Total estimated budget for site: <input name="budget" type= 'text'></label><br>
+      (b) <div style="padding-left: 20px;">
+      <label> Self-funding <input type="radio" name="fundingType" value="self-funding"></label><br>
+      <label>Institutional funding <input type="radio" name="fundingType" value="inst-funding"></label><br>
+      <label>Funding Agency <input type="radio" name="fundingType" value="agency-funding"></label><br>
+      </div>
+      <label style="display: none">Funding Agency: <input name="agency" value="agency"></label><br>
+
+      <h3>Section-B: Research Related Information</h3>
+      <h4>3. Overview of Research</h4>
+      <label>(a) Lay summary (within 300 words) : <textarea name="lay-summary"></textarea></label><div class="print-textarea"></div><br>
+      <label>(b) Type of study : </label><br>
+      <table>
+        <tr>
+            <td>Basic Sciences  <input type="checkbox" name="studType"></td>	
+            <td>Clinical<input type="checkbox" name="studType">	</td>	
+            <td>Cross Sectional	<input type="checkbox" name="studType"></td>
+        </tr>
+        <tr>
+            <td>Retrospective  <input type="checkbox" name="studType"></td>	
+            <td>Epidemiological/Public Health<input type="checkbox" name="studType">	</td>	
+            <td>Case Control	<input type="checkbox" name="studType"></td>
+        </tr>
+        <tr>
+            <td colspan="2">Prospective<input type="checkbox" name="studType"></td>	
+            <td>Cohort<input type="checkbox" name="studType"></td>
+        </tr>
+        <tr>
+            <td>Qualitative  <input type="checkbox" name="studType"></td>	
+            <td>Socio-behavioural<input type="checkbox" name="studType">	</td>	
+            <td>Systematic Review	<input type="checkbox" name="studType"></td>
+        </tr>
+        <tr>
+            <td>Quantitative  <input type="checkbox" name="studType"></td>	
+            <td>Biological samples<input type="checkbox" name="studType">	</td>	
+            <td>Mixed Method	<input type="checkbox" name="studType"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="studType"> Any other(specify): 
+            </td>
+            <td colspan="2">
+                <textarea name="studTypeOther"></textarea><div class="print-textarea"></div>
+            </td>
+        </tr>
+    </table>
+    <h4>4. Methodology</h4><br>
+    (a) Sample size/ number of participants (as applicable)<br>
+    <div style="padding-left: 20px;">
+    <label>At site <input type="number" id="sampSizeAtSite"></label><br>
+    <label>In India <input type="number" id="sampSizeInIndia"></label><br>
+    <label>Globally <input type="number" id="sampSizeGlobally"></label><br>
+    <label>Control group <input type="number" id="ctrlgrp"></label><br>
+    <label>Study group <input type="number" id="studgrp"></label><br>
+    </div>
+    <label>Justification for the sample size chosen (100 words); In case  of  qualitative  study,  mention  the  criteria  used  for saturation: <textarea id="sampSizeJust"></textarea><div class="print-textarea"></div></label><br>
+    <label>(b) Is there an external laboratory/outsourcing involved for investigations?*</label>
+    <div style="padding-left: 20px;">
+    <label>Yes <input type="radio" name="extLab"></label><br>
+    <label>No <input type="radio" name="extLab"></label><br>
+    <label>NA <input type="radio" name="extLab"></label><br>
+    </div>
+    <table>
+      <tr>
+        <td>
+          *If participant samples are sent outside for investigations, provide details of the same and attach relevant documentation such as an MTA / MoU
+        </td>
+      </tr>
+    </table>
+    <label>(c) How was the scientific quality of the study assessed?</label><div style="padding-left: 20px;">
+    <label>Independant external review <input type="radio" name="review"></label><br>
+    <label>Review within multi-centre research group <input type="radio" name="review"></label><br>
+    <label>No review <input type="radio" name="review"></label><br></div><br>
+    <label>Date of review : <input type="date"></label><br>
+    <label>Comments of scientific committee, if any : <textarea></textarea></label><div class="print-textarea"></div><br>
+    <h3>SECTION C: PARTICIPANT RELATED INFORMATION</h3>
+    <h4>5. RECRUITMENT AND RESEARCH PARTICIPANTS</h4>
+    (a) <table>
+      <tr>
+        <td>
+          <label>Healthy volunteer&nbsp;<input type="radio"></label>
+        </td>
+      
+        <td>
+          <label>Patient&nbsp;<input type="radio"></label>
+        </td>
+      
+        <td>
+          <label>Vulnerable persons / Special groups&nbsp;<input type="radio"></label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Others&nbsp;<input type="radio"></label>(Specify)
+        </td>
+        <td>
+          &nbsp;<textarea></textarea><div class="print-textarea"></div>
+        </td>
+      </tr>
+    </table><br>
+    Who will do the recruitment?&nbsp;<input  type="text"><br>
+    Participant recruitment methods used :
+    <table>
+      <tr>
+        <td>
+          <label>Posters/leaflets/letters&nbsp;<input type="radio"></label>
+        </td>
+        <td>
+          <label>TV/Radio ads/Social media/Institution website&nbsp;<input type="radio"></label>
+        </td>
+        <td>
+          <label>Patients / Family/ Friends visiting hospitals&nbsp;<input type="radio"></label>
+        </td>
+        <td>
+          <label>Telephone&nbsp;<input type="radio"></label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Others: <input type="radio">(specify)
+        </td>
+        <td>
+          <textarea></textarea><div class="print-textarea"></div>
+        </td>
+      </tr>
+    </table><br>
+    (b)<div style="padding-left: 20px;">
+     i. Will there be vulnerable persons / special groups involved ?	<label>Yes<input type="radio" name="5bi"></label><label>No<input type="radio" name="5bi"></label><label>NA<input type="radio" name="5ai"></label><br>
+    ii. If yes, type of vulnerable persons / special groups<br>
+    <table>
+      <tr>
+        <td>
+          Children under 18 yrs	<input type="radio">
+        </td>
+        <td>
+          Pregnant  or lactating women	<input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Differently abled (Mental/Physical)	<input type="radio">
+        </td>
+        <td>
+          Employees/Students/Nurses/Staff	<input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Elderly	<input type="radio">
+        </td>
+        <td>
+          Institutionalized <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Economically and socially disadvantaged <input type="radio">
+        </td>
+        <td>
+          Refugees/Migrants/Homeless <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          Terminally ill (stigmatized or rare diseases) <input type="radio">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Any other (Specify):  <input type="radio">
+        </td>
+        <td>
+          <textarea></textarea><div class="print-textarea"></div>
+        </td>
+      </tr>
+    </table></div>
+    iii.   Provide  justification  for  inclusion/exclusion  <textarea></textarea><br><div class="print-textarea"></div>
+    iv.    Are there  any  additional  safeguards  to  protect  research  participants?<textarea></textarea><div class="print-textarea"></div><br><br>
+    (c) Is there any reimbursement to the participants?&nbsp;<label>Yes<input type="radio" name="5c"></label>&nbsp;<label>No<input type="radio" name="5c"></label><br>
+    If yes, &nbsp; &nbsp;<label>Monetary<input type="radio" name="5c2"></label>&nbsp;<label>Non-monetary<input type="radio" name="5c2"></label> Provide details<br>
+    <textarea></textarea><div class="print-textarea"></div><br><br>
+    (d) Are there any incentives to the participants?&nbsp;<label>Yes<input type="radio" name="5d"></label>&nbsp;<label>No<input type="radio" name="5d"></label><br>
+    If yes, &nbsp;&nbsp;<label>Monetary<input type="radio" name="5d2"></label>&nbsp;<label>Non-monetary<input type="radio" name="5d2"></label> Provide details<br>
+    <textarea></textarea><div class="print-textarea"></div><br><br>
+    (e) Are there any participant recruitment fees/ incentives for the study provided to the PI / Institution?&nbsp;<label>Yes<input type="radio" name="5e"></label>&nbsp;<label>No<input type="radio" name="5e"></label><br>
+    If yes, &nbsp; &nbsp;<label>Monetary<input type="radio" name="5c2"></label>&nbsp;<label>Non-monetary<input type="radio" name="5c2"></label> Provide details<br>
+    <textarea></textarea><div class="print-textarea"></div><br><br>
+    <h4>6. BENEFITS AND RISKS</h4>
+    (a) i. Are there any anticipated physical/social/psychological discomforts/ risk to participants?&nbsp;<label>Yes<input type="radio" name="6a"></label>&nbsp;<label>No<input type="radio" name="6a"></label><br>
+    If yes, categorize the level of risk :<br>
+    <table>
+      <tr>
+        <td>
+          Less than Minimal risk&nbsp;<input type="radio" name="6a2">
+        </td>
+        <td>
+          Minimal risk&nbsp;<input type="radio" name="6a2">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Minor increase over minimal risk or low risk&nbsp;<input type="radio" name="6a2">
+        </td>
+        <td>
+          More than minimal risk or  high risk&nbsp;<input type="radio" name="6a2">
+        </td>
+      </tr>
+    </table><br>
+    ii. Describe the risk management strategy: <textarea></textarea><div class="print-textarea"></div><br>
+    (b) What are the potential benefits from the study?<br>
+    <table>
+      <tr>
+        <td>
+          For the participant
+        </td>
+        <td>
+          <label>Yes<input type="radio" name="6b11"></label>
+        </td>
+        <td>
+          <label>No<input type="radio" name="6b11"></label>
+        </td>
+        <td>
+          If yes,
+        </td>
+        <td>
+          <label>Direct<input type="radio" name="6b12"></label>
+        </td>
+        <td>
+          <label>Indirect<input type="radio" name="6b12"></label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          For society/community
+        </td>
+        <td>
+          <label>Yes<input type="radio" name="6b21"></label>
+        </td>
+        <td>
+          <label>No<input type="radio" name="6b21"></label>
+        </td>
+        <td>
+          If yes,
+        </td>
+        <td>
+          <label>Direct<input type="radio" name="6b22"></label>
+        </td>
+        <td>
+          <label>Indirect<input type="radio" name="6b22"></label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          For improvement in science
+        </td>
+        <td>
+          <label>Yes<input type="radio" name="6b31"></label>
+        </td>
+        <td>
+          <label>No<input type="radio" name="6b31"></label>
+        </td>
+        <td>
+          If yes,
+        </td>
+        <td>
+          <label>Direct<input type="radio" name="6b32"></label>
+        </td>
+        <td>
+          <label>Indirect<input type="radio" name="6b32"></label>
+        </td>
+      </tr>
+    </table><br>
+    Please describe how the benefits justify the risks <textarea></textarea><div class="print-textarea"></div><br>
+    (c) Are adverse events expected in the study?<label>Yes<input type="radio" name="6c"></label><label>No<input type="radio" name="6c"></label><br>
+    Are  reporting  procedures  and  management  strategies  described  in  the  study?&nbsp;<label>Yes<input type="radio" name="6c1"></label><label>No<input type="radio" name="6c1"></label><br>
+    If Yes, Specify&nbsp;<textarea></textarea><div class="print-textarea"></div><br>
+
+<table><tr><td>
+  For categories of risk refer to National Ethical Guidelines for Biomedical & Health Research Involving Human Participants 2017, Page 6 Table 2.1
+</td></tr>
+<tr><td>
+  The term adverse events in this regard encompass both serious and non-serious adverse events.
+</td></tr>
+</table><br>
+<h4>7. INFORMED CONSENT</h4>
+    (a) Version number and date of Participant Information Sheet (PIS):<input type="text"><br>
+    Version number and date of Informed Consent Form (ICF):<input type="text"><br>
+    (b) Type of consent planned for :<br>
+    <table>
+      <tr>
+        <td>
+          Signed consent<input type="checkbox">
+        </td>
+        <td>
+          Verbal/Oral consent<input type="checkbox">
+        </td>
+        <td>
+          Waiver of consent<input type="checkbox">
+        </td>
+        <td>
+          Witnessed consent<input type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Consent from LAR<input type="checkbox"><br>
+          (If so, specify from whom)<br>
+          <textarea></textarea><div class="print-textarea"></div>
+        </td>
+        <td>
+          For children less than 7 yrs parental/ LAR consent	<input type="checkbox">
+        </td>
+        <td>
+          Verbal assent from minor (7-12 yrs) along with parental consent <input type="checkbox">
+        </td>
+        <td>
+              Written assent from	minor (13-18 yrs) along with parental consent <input type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Audio-Video (AV) <input type="checkbox">
+        </td>
+        <td>
+          Other <input type="checkbox">
+        </td>
+        <td colspan="3">
+          (specify) <textarea></textarea><div class="print-textarea"></div>
+        </td>
+      </tr>
+    </table>
+    (c) Who will obtain the informed consent?<br>
+      <table>
+        <tr>
+          <td>
+            PI/Co-PI <input type="checkbox">
+          </td>
+          <td>
+            Nurse/Counselor <input type="checkbox">
+          </td>
+          <td>
+            Research Staff <input type="checkbox">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            Other <input type="checkbox"> <br>
+            (Specify) <textarea></textarea><div class="print-textarea"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Any tools to be used  <textarea></textarea><div class="print-textarea"></div>
+          </td>
+        </tr>
+      </table>
+    (d) Participant Information Sheet (PIS) and Informed Consent Form (ICF)<br>
+    <table>
+      <tr>
+        <td>
+          English  <input type="checkbox">
+        </td>
+        <td>
+          Local language <input type="checkbox">
+        </td>
+        <td>
+          Other <input type="checkbox"><br>
+          (Specify) <textarea></textarea><div class="print-textarea"></div>
+        </td>
+      </tr>
+    </table>
+    List the languages in which translations were done <br>
+    <textarea></textarea><div class="print-textarea"></div><br>
+    If translation has not been done, please justify: <br>
+    <textarea></textarea><div class="print-textarea"></div><br>
+    <table>
+      <tr>
+        <td>
+          Are you seeking waiver of consent? If yes, what are the reasons.
+        </td>
+        <td>
+          <label>Yes <input type="radio" name="7e"></label> 
+          <label> No <input type="radio" name="7e"></label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <textarea></textarea><div class="print-textarea"></div>
+        </td>
+      </tr>
+    </table>
+    (f) Provide details of consent requirements for previously stored samples if used in the study:<br>
+    <textarea></textarea><div class="print-textarea"></div><br>
+    (g) Elements contained in the Participant Information Sheet(PIS) and Informed Consent Form (ICF)<br>
+    <table>
+      <tr>
+        <td>
+          <label>
+            Simple language <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Data/ Sample sharing <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Compensation for study related injury <input type="checkbox">
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            Risks and discomforts <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Need to recontact <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Statement that consent is voluntary <input type="checkbox">
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            Alternatives to participation <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Confidentiality <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Commercialization/ Benefit sharing <input type="checkbox">
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            Right to withdraw <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Storage of samples <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Statement that study involves research <input type="checkbox">
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            Benefits <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Return of research results <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Use of photographs/ Identifying data <input type="checkbox">
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            Purpose and procedure <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Payment for participation <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Sponsor contact information <input type="checkbox">
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Others(Specify) <input type="checkbox">: <textarea></textarea><div class="print-textarea"></div>
+        </td>
+      </tr>
+    </table>
+    <h4>
+      8. PAYMENT/COMPENSATION
+    </h4>
+    (a) Who will bear the costs related to participation and procedures ?<br>
+    <table>
+      <tr>
+        <td>
+          <label>
+            PI <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Institution <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Sponsor <input type="checkbox">
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <label>
+            Other agencies <input type="checkbox"> <br>
+            (Specify) <textarea></textarea><div class="print-textarea"></div>
+          </label>
+        </td>
+      </tr>
+    </table>
+    (b) Is there a provision for free treatment of research related injuries? <label>Yes<input type="radio" name="8b"></label><label>No<input type="radio" name="8b"></label><br>
+    If yes, then who will provide the treatment?<br>
+    <textarea></textarea><div class="print-textarea"></div><br>
+    (c) Is there a provision for compensation of research related SAE? <label>Yes<input type="radio" name="8c"></label><label>No<input type="radio" name="8c"></label><br>
+    If yes, specify: 
+    <table>
+      <tr>
+        <td>
+          <label>
+            Sponsor <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Institutional/Corpus fund <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Project grant <input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Insurance <input type="checkbox">
+          </label>
+        </td>
+      </tr>
+    </table>
+    (d) Is there any provision for medical treatment or management till the relatedness is determined for injury to the participants during the study period? <label> Yes <input type="radio" name="8d"></label><label>No <input type="radio" name="8d"></label><br>
+    If yes, specify: <textarea></textarea><div class="print-textarea"></div>
+    <h4>STORAGE AND CONFIDENTIALITY</h4>
+    (a) Identifying Information: Study Involves samples/data (specify):<br>
+    <table>
+      <tr>
+        <td>
+          <label>
+            Anonymous/Unidentified<input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Anonymized: Reversibly coded<input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Irreversibly coded<input type="checkbox">
+          </label>
+        </td>
+        <td>
+          <label>
+            Identifiable<input type="checkbox">
+          </label>
+        </td>
+      </tr>
+    </table><br>
+    If identifiers must be retained, what additional precautions will be taken to ensure that access is limited /data is safeguarded? (e.g. data stored in a cabinet, password protected computer etc.) <br>
+    <textarea></textarea><div class="print-textarea"></div><br>
+    (b) Who will be maintaining the data pertaining to the study?<br>
+    <textarea></textarea><div class="print-textarea"></div><br>
+    (c) Where will the data be analyzed and by whom?<br>
+    <textarea></textarea><div class="print-textarea"></div>
+    (d) For how ling will the data be stored?<br>
+    <textarea></textarea><div class="print-textarea"></div><br>
+    (e) Do you propose to use stored samples/data in future studies? <label>Yes<input type="radio" name="9e"></label><label>No<input type="radio" name="9e"></label><label>Maybe<input type="radio" name="9e"></label>
+    If yes, explain how you might use stored material/data in the future?<br>
+    <textarea></textarea><div class="print-textarea"></div>
+    <h3>SECTION D: OTHER ISSUES</h3>
+    <h4>PUBLICATION, BENEFIT SHARING AND IPR ISSUES</h4>
+    (a) Will the results of the study be reported and disseminated? <label>Yes<input type="radio" name="10a"></label><label>No<input type="radio" name="10a"></label><br>
+    If yes, specify: <textarea></textarea><div class="print-textarea"></div>
+    (b) Will you inform the participants about the results of the study?<label>Yes<input type="radio" name="10b"></label><label>No<input type="radio" name="10b"></label><br>
+    (c) Are there any arrangements for continued provision of the intervention for participants, if effective, once the study has finished?<label>Yes<input type="radio" name="10c"></label><label>No<input type="radio" name="10c"></label><label>Yes<input type="radio" name="10c"></label><br>
+    If yes describe in brief (Max 50 words)<textarea></textarea><div class="print-textarea"></div><br>
+    (d) Is there any plan for post research benefit sharing with participants?<label>Yes<input type="radio" name="10d"></label><label>No<input type="radio" name="10d"></label><br>
+    If yes, specify: <textarea></textarea><div class="print-textarea"></div><br>
+    (e) Is there any commercial value or a plan to patent/IPR issues?<label>Yes<input type="radio" name="10e"></label><label>No<input type="radio" name="10e"></label><br>
+    If yes, please provide details: <textarea></textarea><div class="print-textarea"></div><br>
+    (f) Do you have any additional information to add in support of the application, which is not included elsewhere in the form?<label>Yes<input type="radio" name="10f"></label><label>No<input type="radio" name="10f"></label><br>
+    If yes, provide details: <textarea></textarea><div class="print-textarea"></div>
+    <br><br>
+    <div style="width: 100%; text-align: center;">
+    <button onclick="window.print();" ontouch="window.print();">PRINT</button>
+    </div>
+    <br>
+    </form>
+    <script>
+    function autoResize(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+    const textareas = document.querySelectorAll('textarea');
+    const printDivs = document.querySelectorAll('.print-textarea');
+
+    textareas.forEach((textarea, i) => {
+      autoResize(textarea);
+
+      textarea.addEventListener('input', () => {
+        autoResize(textarea);
+        if (printDivs[i]) {
+          printDivs[i].textContent = textarea.value;
+        }
+      });
+
+      if (printDivs[i]) {
+        printDivs[i].textContent = textarea.value;
+      }
+    });
+
+    window.addEventListener('beforeprint', () => {
+      textareas.forEach((textarea, i) => {
+        if (printDivs[i]) {
+          printDivs[i].textContent = textarea.value;
+          printDivs[i].style.height = textarea.style.height;
+        }
+      });
+    });
+
+    const radios = document.querySelectorAll('input[type="radio"]');
+    const lastCheckedMap = {}; // Tracks last selected radio per group
+
+    radios.forEach(radio => {
+      const group = radio.name;
+
+      radio.addEventListener('mousedown', function () {
+        radio.dataset.wasChecked = (lastCheckedMap[group] === this).toString();
+      });
+
+      radio.addEventListener('click', function () {
+        const wasChecked = this.dataset.wasChecked === 'true';
+
+        if (wasChecked) {
+          this.checked = false;
+          lastCheckedMap[group] = null;
+          this.dispatchEvent(new Event('change', { bubbles: true }));
+        } else {
+          lastCheckedMap[group] = this;
+        }
+      });
+    });
+
+    let invNum = 0;
+    function addInv(){
+      document.getElementById("investigatorTable").innerHTML += `
+        <tr id='invRow${invNum}'>
+            <td>
+                <textarea></textarea><div class="print-textarea"></div>
+            </td>
+            <td>
+                <textarea></textarea><div class="print-textarea"></div>
+            </td>
+            <td>
+                <textarea></textarea><div class="print-textarea"></div>
+            </td>
+            <td>
+                <textarea></textarea><div class="print-textarea"></div>
+            </td>
+            <td>
+              <button type='button' id='invNum${invNum}' class="invNum" onclick="deleteInv(${invNum})">Remove</button>
+            </td>
+        </tr>
+      `;
+      invNum++;
+    }
+
+    function deleteInv(invNum){
+      const element = document.getElementById(`invRow${invNum}`);
+      if (element && element.parentNode) {
+        element.parentNode.removeChild(element);
+      } 
+    }
+    </script>
+  </body>
+</html>
