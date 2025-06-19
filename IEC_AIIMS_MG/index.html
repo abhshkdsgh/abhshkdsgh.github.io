@@ -28,7 +28,7 @@
       }
 
       td{
-        text-align: center;
+        text-align: left;
         vertical-align: top;
       }
 
@@ -60,7 +60,7 @@
       <td style="text-align: center;">
         <h2>ALL INDIA INSTITUTE OF MEDICAL SCIENCES</h2>
         <h2>MANGALAGIRI</h2>
-        <h3>Application form for initial review</h3>
+        <h3>APPLICATION FORM FOR INITIAL REVIEW</h3>
       </td>
     </tr></table>
     General Instructions :<br> 
@@ -68,7 +68,7 @@
     (b) Attach additional sheets if required<br>
     (c) May select more than one option<br>
     <table id="myForm">
-      <h3>Section A - Basic Information</h3>
+      <h3>SECTION A - BASIC INFORMATION</h3>
       <h4>1. Administrative details</h4>
       <label>(a) Name of the organization : <input name="orgName" required type="text"></label><br><br>
       <label>(b) Name of Ethics Committee : <input name="committeeName" required type="text"></label><br><br>
@@ -76,7 +76,7 @@
       <label>(d) Department/Division : <input name="committeeName" required type="text"></label><br><br>
       <label>(e) Date of submission : <input type="date" required></label><br><br>
       <label>(f) Type of review requested :</label><br>
-      <label><input type="radio" name="reviewType" value="excemptionFromReview">Excemption From Review</label><br>
+      <label><input type="radio" name="reviewType" value="excemptionFromReview">Exemption From Review</label><br>
       <label><input type="radio" name="reviewType" value="expeditedReview">Expedited Review</label><br>
       <label><input type="radio" name="reviewType" value="fullCommitteeReview"> Full Committee Review</label><br><br>
       <label>(g) Title of the study : <textarea name="title"></textarea></label><br><br><div class="print-textarea"></div>
@@ -96,7 +96,7 @@
                 Department and institution
             </td>
             <td>
-                Address for Commuication
+                Address for Communication
             </td>
         </tr>
         <tr>
@@ -148,9 +148,9 @@
       (b) <div style="padding-left: 20px;">
       <label> Self-funding <input type="radio" name="fundingType" value="self-funding"></label><br>
       <label>Institutional funding <input type="radio" name="fundingType" value="inst-funding"></label><br>
-      <label>Funding Agency <input type="radio" name="fundingType" value="agency-funding"></label><br>
+      <label>Funding Agency <input type="radio" name="fundingType"></label><br>
       </div>
-      <label style="display: none">Funding Agency: <input name="agency" value="agency"></label><br>
+      <label> Funding Agency: <textarea type="text"></textarea></label><br></table>
 
       <h3>Section-B: Research Related Information</h3>
       <h4>3. Overview of Research</h4>
@@ -214,14 +214,26 @@
       </tr>
     </table>
     <label>(c) How was the scientific quality of the study assessed?</label><div style="padding-left: 20px;">
-    <label>Independant external review <input type="radio" name="review"></label><br>
-    <label>Review within multi-centre research group <input type="radio" name="review"></label><br>
-    <label>No review <input type="radio" name="review"></label><br></div><br>
+    <table><tbody><tr><td><label>
+      Independent external review <input type="checkbox"></label></td>
+      <td>
+        Review by sponsor/Funder<input type="checkbox">
+      </td>
+      <td>
+        Review within PI's institution
+      </td>
+      </tr>
+      <tr><td>
+    <label>Review within multi-centre research group <input type="checkbox" name="review"></label></td>
+    <td>
+    <label>No review <input type="checkbox" name="review"></label></td></tr>
+    </tbody></table></div>
     <label>Date of review : <input type="date"></label><br>
     <label>Comments of scientific committee, if any : <textarea></textarea></label><div class="print-textarea"></div><br>
     <h3>SECTION C: PARTICIPANT RELATED INFORMATION</h3>
     <h4>5. RECRUITMENT AND RESEARCH PARTICIPANTS</h4>
-    (a) <table>
+    (a) Type of participants in the study:
+    <table>
       <tr>
         <td>
           <label>Healthy volunteer&nbsp;<input type="radio"></label>
@@ -741,7 +753,7 @@
     <textarea></textarea><div class="print-textarea"></div><br>
     (c) Where will the data be analyzed and by whom?<br>
     <textarea></textarea><div class="print-textarea"></div>
-    (d) For how ling will the data be stored?<br>
+    (d) For how long will the data be stored?<br>
     <textarea></textarea><div class="print-textarea"></div><br>
     (e) Do you propose to use stored samples/data in future studies? <label>Yes<input type="radio" name="9e"></label><label>No<input type="radio" name="9e"></label><label>Maybe<input type="radio" name="9e"></label>
     If yes, explain how you might use stored material/data in the future?<br>
@@ -751,7 +763,7 @@
     (a) Will the results of the study be reported and disseminated? <label>Yes<input type="radio" name="10a"></label><label>No<input type="radio" name="10a"></label><br>
     If yes, specify: <textarea></textarea><div class="print-textarea"></div>
     (b) Will you inform the participants about the results of the study?<label>Yes<input type="radio" name="10b"></label><label>No<input type="radio" name="10b"></label><br>
-    (c) Are there any arrangements for continued provision of the intervention for participants, if effective, once the study has finished?<label>Yes<input type="radio" name="10c"></label><label>No<input type="radio" name="10c"></label><label>Yes<input type="radio" name="10c"></label><br>
+    (c) Are there any arrangements for continued provision of the intervention for participants, if effective, once the study has finished?<label>Yes<input type="radio" name="10c"></label><label>No<input type="radio" name="10c"></label><label>NA<input type="radio" name="10c"></label><br>
     If yes describe in brief (Max 50 words)<textarea></textarea><div class="print-textarea"></div><br>
     (d) Is there any plan for post research benefit sharing with participants?<label>Yes<input type="radio" name="10d"></label><label>No<input type="radio" name="10d"></label><br>
     If yes, specify: <textarea></textarea><div class="print-textarea"></div><br>
