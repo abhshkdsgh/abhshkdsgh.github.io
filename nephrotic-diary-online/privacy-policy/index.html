@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Nephrotic Diary Online</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .policy-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 { margin: 0; font-size: 1.8rem; }
+        h2 { color: var(--secondary-color); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 30px; }
+        h3 { color: var(--primary-color); }
+
+        .highlight-box {
+            background: #e8f4fd;
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .last-updated {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .container { margin: 10px; padding: 10px; }
+            .policy-content { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Nephrotic Diary Online</h1>
+        <p>Privacy Policy</p>
+    </header>
+
+    <div class="policy-content">
+        <div class="last-updated" id="date-display">Last Updated: August 8, 2026</div>
+
+        <section>
+            <h2>1. Introduction</h2>
+            <p>Welcome to <strong>Nephrotic Diary Online</strong>. We are committed to protecting your privacy and your sensitive medical data. This app is designed to help patients manage Nephrotic Syndrome by tracking urine protein levels and medications.</p>
+        </section>
+
+        <section>
+            <h2>2. Information We Collect</h2>
+            <h3>Personal Information</h3>
+            <p>We collect information that identifies you, including your name, email address, and contact number during account registration via Firebase Authentication.</p>
+            
+            <h3>Health Information (Sensitive Data)</h3>
+            <p>The app collects and stores health-related data, including:</p>
+            <ul>
+                <li>Urine protein levels (Dipstick results).</li>
+                <li>Current medication names, dosages, and frequencies.</li>
+                <li>Other medical issues or symptoms reported by you.</li>
+                <li>Remarks or notes regarding your health status.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Data Security & Encryption</h2>
+            <div class="highlight-box">
+                <strong>Zero-Knowledge Architecture:</strong> Your health data is encrypted locally on your device using a Master Key known only to you. This means your medical records are encrypted <em>before</em> they are sent to our servers.
+            </div>
+            <p>We utilize Industry-standard AES encryption. Neither the app developers nor Google (our cloud provider) can read your health records. If you lose your Master Key and Recovery Key, we cannot recover your data for you.</p>
+        </section>
+
+        <section>
+            <h2>4. Sharing Data with Doctors</h2>
+            <p>You may choose to link your diary with a healthcare professional by providing their unique <strong>Doctor Code</strong>. When you do this:</p>
+            <ul>
+                <li>Your diary's symmetric key is encrypted using the doctor's public key.</li>
+                <li>The doctor can then view your records through their authorized "Doctor" version of the app.</li>
+                <li>You maintain full control and can <strong>unlink</strong> your doctor at any time, revoking their future access.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Third-Party Services</h2>
+            <p>We use <strong>Google Firebase</strong> for the following infrastructure:</p>
+            <ul>
+                <li><strong>Authentication:</strong> To manage user accounts securely.</li>
+                <li><strong>Cloud Firestore:</strong> To store your encrypted records.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access all data stored in your account.</li>
+                <li>Edit or correct your records.</li>
+                <li><strong>Delete your account:</strong> Deleting your account will permanently remove all personal and health data from our servers.</li>
+            </ul>
+        </section>
+
+        <section>
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact the developer at:</p>
+        <p>
+        <strong>Dr. Mahesh V</strong><br>
+                AIIMS Mangalagiri<br />
+                Andhra Pradesh, India<br /><br />
+
+                Email:
+                <a href="mailto:vmaahi46@gmail.com">
+                vmaahi46@gmail.com
+                </a>
+        </p>
+        </section>
+    </div>
+
+    <footer>
+        Nephrotic Diary Online. Dr Mahesh V.
+    </footer>
+</div>
+</body>
+</html>
