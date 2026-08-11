@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's App Privacy Policy - Nephrotic Diary Online</title>
+    <style>
+        :root {
+            --medical-blue: #1a5276;
+            --doctor-teal: #16a085;
+            --text-main: #2c3e50;
+            --bg-light: #fdfefe;
+            --sidebar-grey: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f0f3f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .policy-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--medical-blue);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 { margin: 0; font-size: 1.8em; letter-spacing: 1px; }
+        .sub-header { opacity: 0.9; font-size: 0.9em; margin-top: 10px; }
+
+        .content { padding: 40px; }
+
+        section { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        section:last-child { border-bottom: none; }
+
+        h2 { color: var(--doctor-teal); font-size: 1.3em; margin-top: 0; }
+
+        .security-badge {
+            display: inline-block;
+            background: #e8f8f5;
+            color: #148f77;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+
+        .responsibility-card {
+            background: #fdf2e9;
+            border-left: 5px solid #e67e22;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        footer {
+            background: var(--sidebar-grey);
+            padding: 20px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+
+        a { color: var(--medical-blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .content { padding: 20px; }
+            header { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="policy-wrapper">
+    <header>
+        <h1>Doctor's Privacy Policy</h1>
+        <div class="sub-header">Professional Usage & Data Handling for Healthcare Providers</div>
+    </header>
+
+    <div class="content">
+        <p><strong>Effective Date:</strong> August 11, 2026</p>
+        
+        <section>
+            <h2>1. Professional Identity & Account Data</h2>
+            <p>To facilitate secure access to patient monitoring, we collect and process the following doctor-specific information:</p>
+            <ul>
+                <li><strong>Professional Email:</strong> Used for account registration, secure login via Firebase Authentication, and critical system alerts.</li>
+                <li><strong>Doctor Identification Code:</strong> A unique system-generated alphanumeric code used to link your professional profile with patients who explicitly authorize your access.</li>
+            </ul>
+        </section>
+
+        <section>
+            <span class="security-badge">Encrypted Access</span>
+            <h2>2. Patient Data Access & Confidentiality</h2>
+            <p>The Doctor's App acts as a secure viewer for patient records. As a healthcare provider, you acknowledge that:</p>
+            <ul>
+                <li><strong>Authorized Access:</strong> You can only view data for patients who have manually entered your "Doctor Code" into their application.</li>
+                <li><strong>Local Decryption:</strong> Patient data (names, contact info, and urine protein levels) is stored encrypted on the cloud. The Doctor's App utilizes <strong>RSA Asymmetric Encryption</strong> to securely share keys, ensuring that data is decrypted only within your professional session.</li>
+                <li><strong>Data Scope:</strong> You have access to patient-reported medical logs, medication details, and relapse indicators to assist in clinical decision-making.</li>
+            </ul>
+        </section>
+
+        <section class="responsibility-card">
+            <h2>3. Professional Responsibility</h2>
+            <p>By using this application, you agree to comply with all applicable medical privacy laws (such as HIPAA in the US, or the Digital Personal Data Protection Act in India). You are responsible for:</p>
+            <ul>
+                <li>Maintaining the confidentiality of your account credentials.</li>
+                <li>Ensuring that the device running the Doctor's App is secured with biometric or passcode locks.</li>
+                <li>Refraining from unauthorized sharing or exporting of patient data viewed through the platform.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Cryptographic Key Management</h2>
+            <p>Upon registration, the app generates a unique <strong>Public/Private Key pair</strong> on your device. 
+               The private key remains on your device to facilitate decryption, while the public key is stored on our secure cloud to allow patients to "share" their records with you safely.</p>
+        </section>
+
+        <section>
+            <h2>5. Service Providers</h2>
+            <p>We utilize <strong>Google Firebase</strong> (Authentication and Firestore) for backend infrastructure. These services adhere to rigorous industry standards for data security and availability. We do not use your professional data or the patient data you view for advertising purposes.</p>
+        </section>
+
+        <section>
+            <h2>6. Data Revocation</h2>
+            <p>Access to patient data is controlled entirely by the patient. If a patient chooses to "Unlink" from your profile, your access to their historical and future records is immediately terminated through the cryptographic protocol.</p>
+        </section>
+
+        <section>
+            <h2>7. Contact Support</h2>
+            <p>For technical inquiries or data management requests, contact the development lead:</p>
+            <p><strong>Dr. Mahesh V</strong><br>
+            Email: <a href="mailto:vmaahi46@gmail.com">vmaahi46@gmail.com</a></p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 Nephrotic Diary Online - Doctor Module. 
+        <br>Designed for Clinical Excellence and Patient Privacy.
+    </footer>
+</div>
+
+</body>
+</html>
