@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno</title>
+    <link rel="icon" type="image/x-icon" href="./bruno.png" />
+  <meta property="og:image" content="https://abhshkdsgh.github.io/bruno/bruno.png" />
+  <meta property="og:image:width" content="270" />
+  <meta property="og:image:height" content="270" />
+  <meta name="description" content="Pet of Haritham house"/>
+    <style>
+        :root {
+            /* Default Dark Theme */
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --primary: #06b6d4;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --base-font-size: 16px;
+        }
+
+        :root.light-theme {
+            /* Light Theme Override */
+            --bg: #f1f5f9;
+            --surface: #ffffff;
+            --primary: #0284c7; /* Slightly darker blue for contrast */
+            --text: #0f172a;
+            --text-muted: #475569;
+        }
+
+        html {
+            font-size: var(--base-font-size);
+            transition: font-size 0.2s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Top Bar Controls */
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            background: var(--surface);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: background-color 0.3s ease;
+        }
+
+        .control-btn {
+            background: transparent;
+            border: 1px solid var(--text-muted);
+            color: var(--text);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .control-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--surface);
+            animation: fadeIn 1s ease-in;
+        }
+        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 5px; letter-spacing: 2px;}
+        h2 { font-size: 1.2rem; color: var(--text-muted); font-weight: 400; margin-top: 0; }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: var(--surface);
+            border: 1px solid transparent;
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .tab-btn:hover, .tab-btn.active {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+            color: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+            background: var(--surface);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            animation: slideUp 0.4s ease-out;
+        }
+        .tab-content.active { display: block; }
+        .project { border-left: 3px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
+        .highlight { color: var(--primary); font-weight: 600;}
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar Controls -->
+    <div class="top-bar">
+        <button class="control-btn" onclick="changeFontSize(-1)">A-</button>
+        <button class="control-btn" onclick="changeFontSize(1)">A+</button>
+        <button class="control-btn" id="theme-toggle">☀️ Light Mode</button>
+    </div>
+
+    <div class="container">
+        <header>
+                <table>
+                        <tr>
+                                <td style="width: 45%;">
+                                        <img src="./bruno.jpg" alt="Bruno Dog" style="width: 100%;" ontouchstart="this.style.transform='scale(1.05)'" ontouchend="this.style.transform='scale(1)'">
+                                </td>
+                                <td style="width: 45%;">
+                                        <h1 style="margin-top: 0">Bruno</h1>
+                                        <h2>Pet of House Haritham</h2>
+                                        <p>Govindapuram, Perimpadari, Mannarkkad, Palakkad district, Keralam, India</p>
+                                        <p>PIN 678762</p>
+                                </td>
+                        </tr>
+                </table>
+        </header>
+
+        <div style="margin: 30px; padding: 20px; background: red; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; color: white; font-weight: 600;">
+                If you feel that Bruno is lost or in distress, please contact the emergency numbers below immediately. Your prompt action can help ensure his safety and well-being.
+        </div>
+        
+        <div style="padding: 20px; background: var(--surface); border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                Name of Dog: Bruno<br>
+                Breed: Pomoranian cross Labrador Retriever<br>
+                Biological Name: <span style="font-style: italic;">Canis familiaris</span><br>
+                Date of Birth: 18th November 2020<br>
+                Color: Creamy White<br>
+                Gender: Male<br>
+                Emergency Contact Numbers:
+                <ul>
+                    <li>Mr Haridas G N: <a href="https://wa.me/919447534604">+91 9447534604</a> | <a href="https://wa.me/918921609586">+91 8921609586</a></li>
+                    <li>Mrs Smitha Madhavan: <a href="https://wa.me/919495761139">+91 9495761139</a></li>
+                    <li>Dr Abhishek Das G H: <a href="https://wa.me/918547792947">+91 8547792947</a></a> | <a href="https://wa.me/916282932670">+91 6282932670</a></li>
+                </ul>
+        </div>
+    </div>
+
+    <script>
+
+        // --- Theme and Font Controls Logic ---
+
+        const root = document.documentElement;
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        // Font Size Initialization
+        let currentFontSize = parseInt(localStorage.getItem('fontSize')) || 16;
+        function applyFontSize(size) {
+            root.style.setProperty('--base-font-size', size + 'px');
+            localStorage.setItem('fontSize', size);
+        }
+        applyFontSize(currentFontSize);
+
+        function changeFontSize(step) {
+            currentFontSize += step;
+            if(currentFontSize < 12) currentFontSize = 12; // Min size
+            if(currentFontSize > 24) currentFontSize = 24; // Max size
+            applyFontSize(currentFontSize);
+        }
+
+        // Theme Initialization (Checks LocalStorage -> System Pref -> Default)
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        let currentTheme = localStorage.getItem('theme') || (prefersLight ? 'light' : 'dark');
+
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                root.classList.add('light-theme');
+                themeToggleBtn.textContent = '🌙 Dark Mode';
+            } else {
+                root.classList.remove('light-theme');
+                themeToggleBtn.textContent = '☀️ Light Mode';
+            }
+            localStorage.setItem('theme', theme);
+        }
+        
+        applyTheme(currentTheme);
+
+        // Theme Toggle Event Listener
+        themeToggleBtn.addEventListener('click', () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            applyTheme(currentTheme);
+        });
+
+        // Listen for live system theme changes if user hasn't actively overridden recently
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+            if(!localStorage.getItem('theme')) {
+                currentTheme = e.matches ? 'light' : 'dark';
+                applyTheme(currentTheme);
+            }
+        });
+    </script>
+</body>
+</html>
